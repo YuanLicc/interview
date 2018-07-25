@@ -22,6 +22,8 @@ public String(String original) {
 
 最后我们的变量都存储在一个`char`数组中。
 
+
+
 ### 2. String，StringBuffer，StringBuilder 的区别？
 
 `String` 字符串常量(final修饰，不可被继承)，`String` 是常量，当创建之后即不能更改。可以通过 `StringBuffer` 和 `StringBuilder` 创建 `String` 对象（常用的两个字符串操作类）。`StringBuffer` 字符串变量（线程安全），其也是 `final` 类别的，不允许被继承，其中的绝大多数方法都进行了同步处理，包括常用的 `append` 方法也做了同步处理。其自 `Jdk 1.0` 起就已经出现。其 `toString` 方法会进行对象缓存，以减少元素的复制开销。
@@ -44,6 +46,49 @@ public String toString() {
 }
 ```
 
+
+
 #### 2.1 String，StringBuilder 的区别？
 
 `String` 类型和 `StringBuffer` 类型的主要性能区别其实在于 `String` 是不可变的对象。因此在每次对 `String` 类型进行改变的时候其实都等同于生成了一个新的 `String` 对象，然后将指针指向新的 `String` 对象，所以经常改变内容的字符串最好不要用 `String` ，因为每次生成对象都会对系统性能产生影响，特别当内存中无引用对象多了以后，`JVM` 的 `GC` 就会开始工作，影响性能，可以考虑使用可变字符序列`StringBuilder`。
+
+
+
+### 3. 为什么 Java 中的 String 是不可变的（Immutable）？  
+
+Java 中的 String 不可变是因为 Java 的设计者认为字符串使用非常频繁，将字符串设置为不可变可以允许多个客户端之间共享相同的字符串。 
+
+
+
+### 4. 我们能在 Switch 中使用 String 吗？
+
+从 Java 7 开始，我们可以在 switch case 中使用字符串，但这仅仅是一个语法糖。内部实现在 switch 中使用字符串的 hash code。 
+
+
+
+### 5. 怎么检查一个字符串只包含数字？
+
+
+
+### 6. 在不使用 StringBuffer 的前提下，怎么反转一个字符串？
+
+
+
+### 7. 如何检查出两个给定的字符串是反序的？
+
+
+
+### 8. Java 中，怎么打印出一个字符串的所有排列？
+
+
+
+### 9. Java 中如何将字符串转换为整数？
+
+
+
+### 10. 你能写出一个正则表达式来判断一个字符串是否是一个数字吗?
+
+一个数字字符串，只能包含数字，如 0 到 9 以及 +、- 开头，通过这个信息，你可以下一个如下的正则表达式来判断给定的字符串是不是数字。 
+
+
+
