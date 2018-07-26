@@ -13,7 +13,7 @@ public class Two {
         if(replaced == null) {
             return null;
         }
-        return Arrays.asList(replaced.toString().split(" ")).stream().collect(Collectors.joining("%20"));
+        return Arrays.asList(replaced.toString().split(" ")).stream().collect(Collectors.joining(replace));
     }
 
     public static String replaceSpace(StringBuffer replaced, String replace) {

@@ -38,6 +38,6 @@ Java 面试题汇总。
 - [测试相关](https://github.com/YuanLicc/interview/blob/master/docs/Test.md)
 - [线程相关](https://github.com/YuanLicc/interview/blob/master/docs/Thread.md)
 - [时间日期相关](https://github.com/YuanLicc/interview/blob/master/docs/Time.md)
-- [工具相关，如：Maven](https://github.com/YuanLicc/interview/blob/master/docs/ool.md)
+- [工具相关，如：Maven](https://github.com/YuanLicc/interview/blob/master/docs/Tool.md)
 - [volatile 相关](https://github.com/YuanLicc/interview/blob/master/docs/volatile.md)
 - [XML 相关](https://github.com/YuanLicc/interview/blob/master/docs/XML.md)
