@@ -21,11 +21,11 @@ public class NodeToList {
         return re;
     }
 
-    class ListNode {
+    public static class ListNode {
         int val;
         ListNode next = null;
 
-        ListNode(int val) {
+        public ListNode(int val) {
             this.val = val;
         }
     }

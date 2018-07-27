@@ -15,34 +15,52 @@ public class ReBuildTreeTest extends TestCase {
         TreeNode<Integer> tree =TreeBuilder.build(pre, in);
         PrintUtil.println(tree);
 
+        PrintUtil.printlnLine();
         PrintUtil.println(tree.breadthFirstTravelList());
 
+        PrintUtil.printlnLine();
         tree.breadthFirstTravel(treeNode -> {
             PrintUtil.print(treeNode.value);
         });
+        PrintUtil.printlnLine();
 
         PrintUtil.println(tree.inTravelListRecursion());
 
+        PrintUtil.printlnLine();
         tree.inTravelRecursion(node -> {
             PrintUtil.print(node.value);
         });
+        PrintUtil.printlnLine();
 
         PrintUtil.println(tree.inTravelListWhile());
 
+        PrintUtil.printlnLine();
         tree.inTravelWhile(node -> {
             PrintUtil.print(node.value);
         });
+        PrintUtil.printlnLine();
 
         PrintUtil.println(tree.preTravelListRecursion());
 
+        PrintUtil.printlnLine();
         tree.preTravelRecursion(node -> {
             PrintUtil.print(node.value);
         });
+
+        PrintUtil.printlnLine();
 
         PrintUtil.println(tree.preTravelListWhile());
 
         PrintUtil.printlnLine();
         tree.preTravelWhile(node -> {
+            PrintUtil.print(node.value);
+        });
+
+        PrintUtil.println(tree.postTravelListRecursion());
+
+        PrintUtil.printlnLine();
+
+        tree.postTravelRecursion(node -> {
             PrintUtil.print(node.value);
         });
     }

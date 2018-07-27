@@ -12,6 +12,8 @@ public class AlgorithmArrayTest extends TestCase {
 
     public void testOne() {
         int[][] oneCaseOne = {{1,2,8,9},{2,4,9,12}, {4,7,10,13},{6,8,11,15}};
+        int[][] oneCaseTwo = {{1, 2}, {2, 4}, {4, 7}};
+        int[][] oneCaseThree = {{1}};
 
         Timer oneTimer = Timer.start();
         PrintUtil.printlnWithNaoTime(One.find(7, oneCaseOne)
@@ -27,8 +29,35 @@ public class AlgorithmArrayTest extends TestCase {
                 , oneTimer, prefix, delimiter, suffix);
 
         oneTimer.reset();
+        PrintUtil.printlnWithNaoTime(One.solution(4, oneCaseOne)
+                , oneTimer, prefix, delimiter, suffix);
+
+        oneTimer.reset();
+        PrintUtil.printlnWithNaoTime(One.solution(7, null)
+                , oneTimer, prefix, delimiter, suffix);
+
+        oneTimer.reset();
         PrintUtil.printlnWithNaoTime(One.solution(15, oneCaseOne)
                 , oneTimer, prefix, delimiter, suffix);
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(One.find(7, oneCaseOne));
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(One.find(7, null));
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(One.find(6, oneCaseOne));
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(One.find(6, oneCaseTwo));
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(One.find(6, oneCaseThree));
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(One.find(0, oneCaseTwo));
+
     }
 
     public void testTwo() {
@@ -38,12 +67,24 @@ public class AlgorithmArrayTest extends TestCase {
                 , timer, prefix, delimiter, suffix);
 
         timer.reset();
+        PrintUtil.printlnWithNaoTime(Two.replaceStr(null, "%20")
+                , timer, prefix, delimiter, suffix);
+
+        timer.reset();
         PrintUtil.printlnWithNaoTime(Two.replaceSpace(new StringBuffer("We Are "), "%20")
+                , timer, prefix, delimiter, suffix);
+
+        timer.reset();
+        PrintUtil.printlnWithNaoTime(Two.replaceSpace(null, "%20")
                 , timer, prefix, delimiter, suffix);
 
         timer.reset();
         PrintUtil.printlnWithNaoTime(Two.solution(new StringBuffer("We Are "))
                 , timer, prefix, delimiter, suffix);
+
+        timer.reset();
+        PrintUtil.printlnWithNaoTime(Two.solution(new StringBuffer("We Are "))
+                , null, prefix, delimiter, suffix);
 
     }
 }
