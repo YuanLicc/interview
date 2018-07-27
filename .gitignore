@@ -7,4 +7,6 @@ bin/
 .classpath
 */out/
 */build/
+*.iml
 target/
+
