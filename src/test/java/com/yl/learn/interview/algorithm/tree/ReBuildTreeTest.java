@@ -41,6 +41,7 @@ public class ReBuildTreeTest extends TestCase {
 
         PrintUtil.println(tree.preTravelListWhile());
 
+        PrintUtil.printlnLine();
         tree.preTravelWhile(node -> {
             PrintUtil.print(node.value);
         });
