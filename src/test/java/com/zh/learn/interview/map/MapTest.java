@@ -1,5 +1,6 @@
 package com.zh.learn.interview.map;
 
+import com.yl.learn.interview.util.PrintUtil;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -10,20 +11,18 @@ import java.util.Map;
  * 对map的test
  */
 public class MapTest {
-    public static void main(String[] args) {
-        hashMapTest();
-    }
 
     /**
      * 测试方法
      */
-    public static void hashMapTest() {
+    @Test
+    public void hashMapTest() {
         Map<String, String> map = new HashMap<String, String>();
 
         map.put("first", "this is the first word");
         map.put("second", "this is the second");
 
-        System.out.println(map.get("first"));
+        PrintUtil.println(map.get("first"));
     }
 
     /**
@@ -34,7 +33,8 @@ public class MapTest {
         Map<String, String> map = new HashMap<>();
         String value = map.put(null, "This is a null value");
         String value2 = map.put("value2Key", "value2Value");
-        System.out.println("判断成功则出现passed");
+
+        PrintUtil.println("判断成功则出现passed");
         org.junit.Assert.assertTrue(value == null);
     }
 }
