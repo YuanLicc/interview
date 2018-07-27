@@ -18,7 +18,7 @@ public class MapTest {
      * 测试方法
      */
     public static void hashMapTest() {
-        Map<String, String> map = new HashMap<Strigng, String>();
+        Map<String, String> map = new HashMap<String, String>();
 
         map.put("first", "this is the first word");
         map.put("second", "this is the second");
