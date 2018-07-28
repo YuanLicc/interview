@@ -46,4 +46,14 @@ public class AlgorithmArrayTest extends TestCase {
                 , timer, prefix, delimiter, suffix);
 
     }
+
+    public void testPlusPlus() {
+        int count = 0;
+        int total = 0;
+        for(int i = 0; i < 10; i++) {
+            total = count++;
+            PrintUtil.print(count);
+        }
+        PrintUtil.print(total);
+    }
 }
