@@ -8,6 +8,7 @@ import junit.framework.TestCase;
 public class PrintUtilTest extends TestCase {
 
     public void testPrintLine() {
+
         String prefix = "start", suffix = "end";
         int column = 100, row = 2;
 
