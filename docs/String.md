@@ -110,3 +110,153 @@ Integer.parseInt();
 
 两个对象，堆区(str)和常量池("abc")中。
 
+
+
+### 2 String 源码学习
+
+​	字符串是常量，在定义之后不能被改变，字符串缓冲区支持可变的字符串。因为 String 对象是不可变的，所以可以共享它们。 
+
+```
+String str = "abc";
+```
+
+相当于
+
+```java
+char data[] = {'a', 'b', 'c'};
+String str = new String(data);
+```
+
+#### 2.1 定义
+
+```
+public final class String implements java.io.Serializable, Comparable<String>, CharSequence{}
+```
+
+​	从该类的声明中我们可以看出String是final类型的，表示该类不能被继承，同时该类实现了三个接口：`java.io.Serializable`、 `Comparable<String>`、 `CharSequence`
+
+####2.2 属性
+
+```
+private final char value[];
+```
+
+> 这是一个字符数组，并且是final类型，他用于存储字符串内容，从final这个关键字中我们可以看出，String的内容一旦被初始化了是不能被更改的。 虽然有这样的例子： String s = “a”; s = “b” 但是，这并不是对s的修改，而是重新指向了新的字符串， 从这里我们也能知道，**String其实就是用char[]实现的。**
+
+```
+private int hash;
+```
+
+> 缓存字符串的[hash Code](http://www.hollischuang.com/archives/99#hashCode)，默认值为 0
+
+```
+private static final long serialVersionUID = -6849794470754667710L;
+private static final ObjectStreamField[] serialPersistentFields = new ObjectStreamField[0];
+```
+
+> 因为`String`实现了`Serializable`接口，所以支持序列化和反序列化支持。Java的序列化机制是通过在运行时判断类的`serialVersionUID`来验证版本一致性的。在进行反序列化时，JVM会把传来的字节流中的`serialVersionUID`与本地相应实体（类）的`serialVersionUID`进行比较，如果相同就认为是一致的，可以进行反序列化，否则就会出现序列化版本不一致的异常(`InvalidCastException`)。
+
+#### 2.3 构造方法
+
+String类作为一个java.lang包中比较常用的类,自然有很多重载的构造方法.在这里介绍几种典型的构造方法:
+
+#### **2.3.1 使用字符数组、字符串构造一个String**
+
+我们知道，其实String就是使用字符数组（char[]）实现的。所以我们可以使用一个字符数组来创建一个String，那么这里值得注意的是，**当我们使用字符数组创建String的时候，会用到Arrays.copyOf方法和Arrays.copyOfRange方法。这两个方法是将原有的字符数组中的内容逐一的复制到String中的字符数组中。**同样，我们也可以用一个String类型的对象来初始化一个String。这里将直接将`源String`中的`value`和`hash`两个属性直接赋值给`目标String`。因为String一旦定义之后是不可以改变的，所以也就不用担心改变`源String`的值会影响到`目标String`的值。
+
+> 当然，在使用字符数组来创建一个新的String对象的时候，不仅可以使用整个字符数组，也可以使用字符数组的一部分，只要多传入两个参数`int offset`和`int count`就可以了。
+
+ #####**2.3.2 使用字节数组构造一个String**
+
+在Java中，String实例中保存有一个`char[]`字符数组，`char[]`字符数组是以unicode码来存储的，String 和 char 为内存形式，byte是网络传输或存储的序列化形式。所以在很多传输和存储的过程中需要将byte[]数组和String进行相互转化。所以，String提供了一系列重载的构造方法来将一个字符数组转化成String，提到byte[]和String之间的相互转换就不得不关注编码问题。**String(byte[] bytes, Charset charset)是指通过charset来解码指定的byte数组，将其解码成unicode的char[]数组，够造成新的String。**
+
+> **这里的bytes字节流是使用charset进行编码的，想要将他转换成unicode的char[]数组，而又保证不出现乱码，那就要指定其解码方式**
+
+同样使用字节数组来构造String也有很多种形式，按照是否指定解码方式分的话可以分为两种：
+
+> String(byte bytes[]) String(byte bytes[], int offset, int length)
+>
+> String(byte bytes[], Charset charset)
+>
+> String(byte bytes[], String charsetName)
+>
+> String(byte bytes[], int offset, int length, Charset charset)
+>
+> String(byte bytes[], int offset, int length, String charsetName)
+
+#### 2.3.3 **使用StringBuffer和StringBuider构造一个String**
+
+​	作为String的两个“兄弟”，StringBuffer和StringBuider也可以被当做构造String的参数。
+
+```
+public String(StringBuffer buffer) {
+    synchronized(buffer) {
+       this.value = Arrays.copyOf(buffer.getValue(), buffer.length());
+     }
+}
+
+public String(StringBuilder builder) {
+	this.value = Arrays.copyOf(builder.getValue(), 			builder.length());
+}
+```
+
+​	当然，这两个构造方法是很少用到的，至少我从来没有使用过，因为当我们有了StringBuffer或者StringBuilfer对象之后可以直接使用他们的toString方法来得到String。关于效率问题，Java的官方文档有提到说使用StringBuilder的toString方法会更快一些，原因是StringBuffer的`toString`方法是synchronized的，在牺牲了效率的情况下保证了线程安全。
+
+```
+ public String toString() {
+    // Create a copy, don't share the array
+    return new String(value, 0, count);
+ }
+
+this.value = Arrays.copyOfRange(value, offset, offset+count);
+```
+
+#### 2.3.4 比较方法
+
+```
+boolean equals(Object anObject)；
+boolean contentEquals(StringBuffer sb)；
+boolean contentEquals(CharSequence cs)；
+boolean equalsIgnoreCase(String anotherString)；
+int compareTo(String anotherString)；
+int compareToIgnoreCase(String str)；
+boolean regionMatches(int toffset, String other, int ooffset,int len)  //局部匹配
+boolean regionMatches(boolean ignoreCase, int toffset,String other, int ooffset, int len)   //局部匹配
+```
+
+#### 2.3.5 String 的 equals方法
+
+```
+public boolean equals(Object anObject) {
+        if (this == anObject) {
+            return true;
+        }
+        if (anObject instanceof String) {
+            String anotherString = (String) anObject;
+            int n = value.length;
+            if (n == anotherString.value.length) {
+                char v1[] = value;
+                char v2[] = anotherString.value;
+                int i = 0;
+                while (n-- != 0) {
+                    if (v1[i] != v2[i])
+                            return false;
+                    i++;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+```
+
+​	该方法首先判断`this == anObject ？`， 也就是说判断要比较的对象和当前对象是不是同一个对象，如果是直接返回true，如不是再继续比较，然后在判断`anObject`是不是`String`类型的，如果不是，直接返回false,如果是再继续比较，到了能终于比较字符数组的时候，他还是先比较了两个数组的长度，不一样直接返回false，一样再逐一比较值。 虽然代码写的内容比较多，但是可以很大程度上提高比较的效率。 
+
+
+
+
+
+
+
+
+
