@@ -2,7 +2,7 @@
 
 ### 1. String 能被继承吗？为什么？
 
-不可以，因为 `String` 类有 `final` 修饰符，而 `fina` 不能被继承的，实现细节不允许改变。平常我们定义的 `String str = "a"` 和 `String str = new String("a")` 还是有差异的。前者默认调用的 `String.valueof` 来返回 `String` 的实例对象，至于调用哪个则取决于你的赋值，比如`String num = 1`，调用的是：
+不可以，因为 `String` 类有 `final` 修饰符，而 `final` 不能被继承的，实现细节不允许改变。平常我们定义的 `String str = "a"` 和 `String str = new String("a")` 还是有差异的。前者默认调用的 `String.valueof` 来返回 `String` 的实例对象，至于调用哪个则取决于你的赋值，比如`String num = 1`，调用的是：
 
 ```java
 public static String valueOf(int i) {
