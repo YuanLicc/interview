@@ -17,6 +17,7 @@ public class BitwriseOperationTest extends TestCase {
         PrintUtil.printlnLine();
 
         PrintUtil.println(BitwiseOperation.rightMove(num, moveCount), "右移位操作：num : " + num + " ", "");
+
     }
 
 }

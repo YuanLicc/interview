@@ -16,6 +16,14 @@ public class StackToQueueTest extends TestCase {
 
         StackToQueue stackToQueueEmpty = new StackToQueue();
         stackToQueueEmpty.pop();
+
+        Object o = new Object() {
+          public boolean equals(Object o) {
+              return true;
+          }
+        };
+        PrintUtil.printlnLine();
+        PrintUtil.println(o.equals("c"));
     }
 
 }

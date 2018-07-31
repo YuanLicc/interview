@@ -223,3 +223,30 @@ throw 用于抛出 java.lang.Throwable 类的一个实例化对象，意思是�
 8. 如果申请的缓冲区过大的话，可能申请失败。
 9. 在运行期间你不知道会需要多大的数据或者你需要分配大量的内存的时候，建议你使用堆。
 10. 可能造成内存泄露。
+
+
+
+#### 几个关键字的作用域？
+
+|          | public | protected | default | private |
+| -------- | ------ | --------- | ------- | ------- |
+| 同一个类 | OK     | OK        | OK      | OK      |
+| 同一个包 | OK     | OK        | OK      | NO      |
+| 子父类   | OK     | OK        | NO      | NO      |
+| 不同包   | OK     | NO        | NO      | NO      |
+
+
+
+#### Java 关键字、保留字、特殊直接量？
+
+1）48个关键字：abstract、assert、boolean、break、byte、case、catch、char、class、continue、default、do、double、else、enum、extends、final、finally、float、for、if、implements、import、int、interface、instanceof、long、native、new、package、private、protected、public、return、short、static、strictfp、super、switch、synchronized、this、throw、throws、transient、try、void、volatile、while。
+
+2）2个保留字（现在没用以后可能用到作为关键字）：goto、const。
+
+3）3个特殊直接量：true、false、null。
+
+
+
+### 类初始化过程？
+
+父类的静态变量-父类的静态代码块 子类的静态变量-子类的静态代码块 父类的非静态变量-父类的非静态代码块-父类的构造函数 子类的非静态变量-子类的非静态代码块-子类的构造函数。规律就是：父类先于子类，静态的先于非静态的，变量先于代码块。
