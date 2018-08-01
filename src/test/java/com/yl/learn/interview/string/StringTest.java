@@ -1,9 +1,11 @@
 package com.yl.learn.interview.string;
 
+import com.yl.learn.interview.algorithm.string.AllPermutation;
 import com.yl.learn.interview.algorithm.string.Reverse;
 import com.yl.learn.interview.algorithm.string.ReverseOrder;
 import com.yl.learn.interview.util.ObjectUtil;
 import com.yl.learn.interview.util.PrintUtil;
+import com.yl.learn.interview.util.StringUtil;
 import junit.framework.TestCase;
 
 public class StringTest extends TestCase {
@@ -25,6 +27,16 @@ public class StringTest extends TestCase {
         PrintUtil.template("String Reverse: ", () -> {
             PrintUtil.println(Reverse.reverse(reversed)
                     , reversed + " ===> ", "");
+        });
+
+        PrintUtil.template("String Reverse: ", () -> {
+            PrintUtil.println(Reverse.reverse(null)
+                    , ObjectUtil.NULL + " ===> ", "");
+        });
+
+        PrintUtil.template("String Reverse: ", () -> {
+            PrintUtil.println(Reverse.reverse("")
+                    , StringUtil.EMPTY + " ===> ", "");
         });
     }
 
@@ -72,6 +84,20 @@ public class StringTest extends TestCase {
                     , "" + " ===> ", "");
         });
 
+    }
+
+    public void testAllPermutation() {
+        String source = "abc";
+
+        PrintUtil.template("All permutations:", () -> {
+            PrintUtil.println(AllPermutation.allPermutations(source)
+                    , source + " ===> ", "");
+        });
+
+        PrintUtil.template("All permutations:", () -> {
+            PrintUtil.println(AllPermutation.allPermutations(null)
+                    , ObjectUtil.NULL + " ===> ", "");
+        });
     }
 
 }

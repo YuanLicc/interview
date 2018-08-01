@@ -1,17 +1,27 @@
 package com.yl.learn.interview.algorithm.string;
 
+import com.yl.learn.interview.util.CharUtil;
+
+/**
+ * 字符串反转
+ * @author YuanLi
+ */
 public class Reverse {
 
     public static String reverse(String src) {
-        if(src == null || src.length() == 0) return null;
+        if(src == null) return null;
 
-        String re = new String();
+        int length = src.length();
 
-        int length = src.length() - 1;
-        for(int i = length; i >= 0; i--) {
-            re += src.charAt(i);
+        if(length == 0) return src;
+
+        char[] chars = src.toCharArray();
+
+        for (int i = ((length - 1) >> 1); i >= 0; i--) {
+            CharUtil.swap(chars, i, length - 1 - i);
         }
-        return re;
+
+        return String.valueOf(chars);
     }
 
 }

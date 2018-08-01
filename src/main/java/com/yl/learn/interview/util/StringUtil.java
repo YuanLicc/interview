@@ -38,4 +38,14 @@ public class StringUtil {
         return buffer.toString();
     }
 
+    public static String swap(String source, int index1, int index2) {
+        if(source == null || source.equals(EMPTY)) {
+            return EMPTY;
+        }
+
+        char[] sourceChars = CharUtil.swap(source.toCharArray(), index1, index2);
+
+        return String.valueOf(sourceChars);
+    }
+
 }

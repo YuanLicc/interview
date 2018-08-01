@@ -72,21 +72,121 @@ Java 中的 String 不可变是因为 Java 的设计者认为字符串使用非�
 
 ### 5. 怎么检查一个字符串只包含数字？
 
+```java
+for(...) {
+    Character.isDigit(ch)
+}
+```
+
 
 
 ### 6. 在不使用 StringBuffer 的前提下，怎么反转一个字符串？
+
+```java
+// author YuanLi
+public static String reverse(String src) {
+    if(src == null) return null;
+
+    int length = src.length();
+
+    if(length == 0) return src;
+
+    char[] chars = src.toCharArray();
+
+    for (int i = ((length - 1) >> 1); i >= 0; i--) {
+        CharUtil.swap(chars, i, length - 1 - i);
+    }
+
+    return String.valueOf(chars);
+}
+
+// CharUtil.swap | author YuanLi
+public static char[] swap(char[] chars, int swapIndex1, int swapIndex2) {
+    if(chars == null) return null;
+
+    int length = chars.length;
+
+    if(length == 0) return chars;
+
+    if(swapIndex1 < 0 || swapIndex1 >= length || swapIndex2 < 0 || swapIndex2 >= length) {
+        throw new ArrayIndexOutOfBoundsException();
+    }
+
+    char temp = chars[swapIndex1];
+    chars[swapIndex1] = chars[swapIndex2];
+    chars[swapIndex2] = temp;
+
+    return chars;
+}
+```
 
 
 
 ### 7. 如何检查出两个给定的字符串是反序的？
 
-StringBuilder.reverse();
+1、StringBuilder.reverse();
 
+2、
 
+```java
+// author YuanLi
+public static boolean isReverseOrder(String source) {
+
+    if(source == null) return false;
+
+    int maxIndex = source.length() - 1;
+
+    if(source.length() == 0) return true;
+
+    for(int i = (maxIndex) >> 1; i >= 0; i--) {
+        if(source.charAt(i) != source.charAt(maxIndex - i)) {
+            return false;
+        }
+    }
+    return true;
+}
+```
 
 
 
 ### 8. Java 中，怎么打印出一个字符串的所有排列？
+
+```java
+/**
+ * 字符串全排
+ * @author YuanLi
+ */
+public class AllPermutation {
+
+    public static List allPermutations(String source) {
+
+        if(source == null || source.length() == 0) return null;
+
+        return allPermutations(source.toCharArray(), 0
+              , source.length() - 1, new ArrayList());
+    }
+
+    private static List allPermutations(char[] source, int start
+            , int end, List<String> permutations) {
+        
+        if(start == end) {
+            permutations.add(String.valueOf(source));
+            return permutations;
+        }
+
+        for(int i = start; i <= end; i++) {
+            source = CharUtil.swap(source, i, start);
+
+            allPermutations(source, start + 1, source.length - 1, permutations);
+
+            source = CharUtil.swap(source, i, start);
+        }
+
+        return permutations;
+    }
+
+}
+```
 
 
 
@@ -102,9 +202,13 @@ Integer.parseInt();
 
 一个数字字符串，只能包含数字，如 0 到 9 以及 +、- 开头，通过这个信息，你可以下一个如下的正则表达式来判断给定的字符串是不是数字。 
 
+
+
 ### 数组有没有length()方法？String有没有length()方法
 
 数组没有length()方法，有length 的属性。String 有length()方法。JavaScript中，获得字符串的长度是通过length属性得到的，这一点容易和Java混淆。 
+
+
 
 ### String str = new String(“abc”)  到底创建了几个对象？
 
@@ -112,7 +216,11 @@ Integer.parseInt();
 
 
 
-### 2 String 源码学习
+
+
+## 概念
+
+### String 源码学习
 
 ​	字符串是常量，在定义之后不能被改变，字符串缓冲区支持可变的字符串。因为 String 对象是不可变的，所以可以共享它们。 
 
@@ -130,7 +238,9 @@ String str = new String(data);
 #### 2.1 定义
 
 ```
-public final class String implements java.io.Serializable, Comparable<String>, CharSequence{}
+public final class String implements java.io.Serializable, Comparable<String>, CharSequence {
+    ...
+}
 ```
 
 ​	从该类的声明中我们可以看出String是final类型的，表示该类不能被继承，同时该类实现了三个接口：`java.io.Serializable`、 `Comparable<String>`、 `CharSequence`

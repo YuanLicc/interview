@@ -1,7 +1,16 @@
 package com.yl.learn.interview.algorithm.string;
 
+/**
+ * 字符串是否为反序的
+ * @author YuanLi
+ */
 public class ReverseOrder {
 
+    /**
+     * 非 buffer.reverse()
+     * @param source 源串
+     * @return true or false
+     */
     public static boolean isReverseOrder(String source) {
 
         if(source == null) return false;
