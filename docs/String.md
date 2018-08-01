@@ -17,7 +17,6 @@ public String(String original) {
     this.value = original.value; 
     this.hash = original.hash; 
 } 
-
 ```
 
 最后我们的变量都存储在一个`char`数组中。
@@ -237,29 +236,29 @@ String str = new String(data);
 
 #### 2.1 定义
 
-```
+```java
 public final class String implements java.io.Serializable, Comparable<String>, CharSequence {
-    ...
+    //...
 }
 ```
 
 ​	从该类的声明中我们可以看出String是final类型的，表示该类不能被继承，同时该类实现了三个接口：`java.io.Serializable`、 `Comparable<String>`、 `CharSequence`
 
-####2.2 属性
+#### 2.2 属性
 
-```
+```java
 private final char value[];
 ```
 
 > 这是一个字符数组，并且是final类型，他用于存储字符串内容，从final这个关键字中我们可以看出，String的内容一旦被初始化了是不能被更改的。 虽然有这样的例子： String s = “a”; s = “b” 但是，这并不是对s的修改，而是重新指向了新的字符串， 从这里我们也能知道，**String其实就是用char[]实现的。**
 
-```
+```java
 private int hash;
 ```
 
 > 缓存字符串的[hash Code](http://www.hollischuang.com/archives/99#hashCode)，默认值为 0
 
-```
+```java
 private static final long serialVersionUID = -6849794470754667710L;
 private static final ObjectStreamField[] serialPersistentFields = new ObjectStreamField[0];
 ```
@@ -284,21 +283,21 @@ String类作为一个java.lang包中比较常用的类,自然有很多重载的�
 
 同样使用字节数组来构造String也有很多种形式，按照是否指定解码方式分的话可以分为两种：
 
-> String(byte bytes[]) String(byte bytes[], int offset, int length)
->
-> String(byte bytes[], Charset charset)
->
-> String(byte bytes[], String charsetName)
->
-> String(byte bytes[], int offset, int length, Charset charset)
->
-> String(byte bytes[], int offset, int length, String charsetName)
+```java
+String(byte bytes[]) String(byte bytes[], int offset, int length)
+String(byte bytes[], Charset charset)
+String(byte bytes[], String charsetName)
+String(byte bytes[], int offset, int length, Charset charset)
+String(byte bytes[], int offset, int length, String charsetName)
+```
+
+
 
 #### 2.3.3 **使用StringBuffer和StringBuider构造一个String**
 
 ​	作为String的两个“兄弟”，StringBuffer和StringBuider也可以被当做构造String的参数。
 
-```
+```java
 public String(StringBuffer buffer) {
     synchronized(buffer) {
        this.value = Arrays.copyOf(buffer.getValue(), buffer.length());
@@ -306,13 +305,13 @@ public String(StringBuffer buffer) {
 }
 
 public String(StringBuilder builder) {
-	this.value = Arrays.copyOf(builder.getValue(), 			builder.length());
+	this.value = Arrays.copyOf(builder.getValue(), builder.length());
 }
 ```
 
 ​	当然，这两个构造方法是很少用到的，至少我从来没有使用过，因为当我们有了StringBuffer或者StringBuilfer对象之后可以直接使用他们的toString方法来得到String。关于效率问题，Java的官方文档有提到说使用StringBuilder的toString方法会更快一些，原因是StringBuffer的`toString`方法是synchronized的，在牺牲了效率的情况下保证了线程安全。
 
-```
+```java
  public String toString() {
     // Create a copy, don't share the array
     return new String(value, 0, count);
@@ -323,7 +322,7 @@ this.value = Arrays.copyOfRange(value, offset, offset+count);
 
 #### 2.3.4 比较方法
 
-```
+```java
 boolean equals(Object anObject)；
 boolean contentEquals(StringBuffer sb)；
 boolean contentEquals(CharSequence cs)；
@@ -336,28 +335,28 @@ boolean regionMatches(boolean ignoreCase, int toffset,String other, int ooffset,
 
 #### 2.3.5 String 的 equals方法
 
-```
+```java
 public boolean equals(Object anObject) {
-        if (this == anObject) {
+    if (this == anObject) {
+        return true;
+    }
+    if (anObject instanceof String) {
+        String anotherString = (String) anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
             return true;
         }
-        if (anObject instanceof String) {
-            String anotherString = (String) anObject;
-            int n = value.length;
-            if (n == anotherString.value.length) {
-                char v1[] = value;
-                char v2[] = anotherString.value;
-                int i = 0;
-                while (n-- != 0) {
-                    if (v1[i] != v2[i])
-                            return false;
-                    i++;
-                }
-                return true;
-            }
-        }
-        return false;
     }
+    return false;
+}
 ```
 
 ​	该方法首先判断`this == anObject ？`， 也就是说判断要比较的对象和当前对象是不是同一个对象，如果是直接返回true，如不是再继续比较，然后在判断`anObject`是不是`String`类型的，如果不是，直接返回false,如果是再继续比较，到了能终于比较字符数组的时候，他还是先比较了两个数组的长度，不一样直接返回false，一样再逐一比较值。 虽然代码写的内容比较多，但是可以很大程度上提高比较的效率。 
@@ -366,7 +365,7 @@ public boolean equals(Object anObject) {
 
 ​	Java是不支持重载运算符，String的“+”是java中唯一的一个重载运算符，那么java使如何实现这个加号的呢？我们先看一段代码：
 
-```
+```java
 public static void main(String[] args) {
     String string="hollis";
     String string2 = string + "chuang";
@@ -375,7 +374,7 @@ public static void main(String[] args) {
 
 ​	然后我们将这段代码**反编译**：
 
-```
+```java
 public static void main(String args[]){
    String string = "hollis";
    String string2 = (new StringBuilder(String.valueOf(string))).append("chuang").toString();
@@ -390,18 +389,18 @@ public static void main(String args[]){
 
 #### 2.3.7 String.valueOf和Integer.toString的区别
 
-​	接下来我们看以下这段代码，我们有三种方式将一个int类型的变量变成呢过String类型，那么他们有什么区别？
+​	接下来我们看以下这段代码，我们有三种方式将一个int类型的变量变成呢过 `String` 类型，那么他们有什么区别？
 
-```
+```java
 1.int i = 5;
 2.String i1 = "" + i;
 3.String i2 = String.valueOf(i);
 4.String i3 = Integer.toString(i);
 ```
 
-> ​	1、第三行和第四行没有任何区别，因为`String.valueOf(i)`也是调用`Integer.toString(i)`来实现的。
+> 1、第三行和第四行没有任何区别，因为 `String.valueOf(i)` 也是调用 `Integer.toString(i)` 来实现的。
 >
-> ​	 2、第二行代码其实是`String i1 = (new StringBuilder()).append(i).toString();`，首先创建一个StringBuilder对象，然后再调用append方法，再调用toString方法。
+> 2、第二行代码其实是 `String i1 = (new StringBuilder()).append(i).toString();`，首先创建一个 `StringBuilder` 对象，然后再调用 `append` 方法，再调用 `toString` 方法。
 
 
 
