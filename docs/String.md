@@ -252,9 +252,46 @@ public boolean equals(Object anObject) {
 
 ​	该方法首先判断`this == anObject ？`， 也就是说判断要比较的对象和当前对象是不是同一个对象，如果是直接返回true，如不是再继续比较，然后在判断`anObject`是不是`String`类型的，如果不是，直接返回false,如果是再继续比较，到了能终于比较字符数组的时候，他还是先比较了两个数组的长度，不一样直接返回false，一样再逐一比较值。 虽然代码写的内容比较多，但是可以很大程度上提高比较的效率。 
 
+#### 2.3.6 String 对 “+” 的重载
 
+​	Java是不支持重载运算符，String的“+”是java中唯一的一个重载运算符，那么java使如何实现这个加号的呢？我们先看一段代码：
 
+```
+public static void main(String[] args) {
+    String string="hollis";
+    String string2 = string + "chuang";
+}
+```
 
+​	然后我们将这段代码**反编译**：
+
+```
+public static void main(String args[]){
+   String string = "hollis";
+   String string2 = (new StringBuilder(String.valueOf(string))).append("chuang").toString();
+}
+```
+
+​	看了反编译之后的代码我们发现，其实String对“+”的支持其实就是使用了StringBuilder以及他的append、toString两个方法。
+
+​	在进行多次字符串+操作**注意**
+
+​	每次“+”操作其实都会---new StringBuilder() --在进行append ，所以在多次+操作时最好先创建一个StringBuilder对象，之后再在这个的基础上进行append方法的调用，这样可以减少内存的消耗。
+
+#### 2.3.7 String.valueOf和Integer.toString的区别
+
+​	接下来我们看以下这段代码，我们有三种方式将一个int类型的变量变成呢过String类型，那么他们有什么区别？
+
+```
+1.int i = 5;
+2.String i1 = "" + i;
+3.String i2 = String.valueOf(i);
+4.String i3 = Integer.toString(i);
+```
+
+> ​	1、第三行和第四行没有任何区别，因为`String.valueOf(i)`也是调用`Integer.toString(i)`来实现的。
+>
+> ​	 2、第二行代码其实是`String i1 = (new StringBuilder()).append(i).toString();`，首先创建一个StringBuilder对象，然后再调用append方法，再调用toString方法。
 
 
 
