@@ -1,5 +1,9 @@
 package com.yl.learn.interview.util;
 
+import com.yl.learn.interview.function.VoidNoParamsFunction;
+
+import java.util.function.Consumer;
+
 /**
  * 控制台输出工具类
  * @author YuanLi
@@ -32,6 +36,10 @@ public class PrintUtil {
     public static void printWithNaoTime(Object o, Timer timer, String prefix, String delimiter, String suffix) {
         System.out.print(StringUtil.nullToEmpty(prefix) + ObjectUtil.nullToString(o)
                 + StringUtil.nullToEmpty(delimiter) + nullToTime(timer) + StringUtil.nullToEmpty(suffix));
+    }
+
+    public static void println() {
+        System.out.println();
     }
 
     public static void println(Object o) {
@@ -116,5 +124,12 @@ public class PrintUtil {
 
     private static String nullToTime(Timer timer) {
         return timer == null ? ObjectUtil.NULL : timer.end().toString();
+    }
+
+    public static void template(String title, VoidNoParamsFunction contentAction) {
+
+        PrintUtil.printlnLine();
+        PrintUtil.println(StringUtil.nullToEmpty(title));
+        contentAction.action();
     }
 }
