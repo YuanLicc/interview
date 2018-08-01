@@ -31,3 +31,14 @@ c）使用接口代表和访问集合，如使用List存储 ArrayList，使用 M
 d）使用迭代器来循环集合。 
 
 e）使用集合的时候使用泛型。 
+
+
+
+## 概念
+
+### 集合
+
+类图如下
+
+![Collection 类图](https://github.com/YuanLicc/interview/blob/master/docs/images/collection.svg)
+

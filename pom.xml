@@ -15,6 +15,7 @@
         <compiler.version>3.7.0</compiler.version>
         <cobertura.version>2.7</cobertura.version>
         <junit.version>4.9</junit.version>
+        <jdbc.dirver.version>8.0.11</jdbc.dirver.version>
     </properties>
 
     <build>
@@ -47,6 +48,13 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${jdbc.dirver.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
