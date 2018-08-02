@@ -98,6 +98,11 @@ public class StringTest extends TestCase {
             PrintUtil.println(AllPermutation.allPermutations(null)
                     , ObjectUtil.NULL + " ===> ", "");
         });
+
+    }
+
+    private interface aa{
+        abstract void aa();
     }
 
 }
