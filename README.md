@@ -1,4 +1,4 @@
-## Interview [![Build Status](https://travis-ci.org/YuanLicc/interview.svg?branch=master)](https://travis-ci.org/YuanLicc/interview) [![codecov.io](https://codecov.io/gh/YuanLicc/interview/branch/master/graphs/badge.svg?branch=master)](https://codecov.io/gh/YuanLicc/interview?branch=master)
+## Interview [![Build Status](https://travis-ci.org/YuanLicc/interview.svg?branch=master)](https://travis-ci.org/YuanLicc/interview) [![codecov.io](https://codecov.io/gh/YuanLicc/interview/branch/master/graphs/badge.svg?branch=master)](https://codecov.io/gh/YuanLicc/interview?branch=master) [![GitHub version](https://badge.fury.io/gh/yuanlicc%2Finterview.svg)](https://badge.fury.io/gh/yuanlicc%2Finterview)
 Java 面试题汇总。
 
 
