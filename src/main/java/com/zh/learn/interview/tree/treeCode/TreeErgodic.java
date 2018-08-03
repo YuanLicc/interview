@@ -6,7 +6,7 @@ import java.util.Stack;
 
 /**
  * Created by hong on 2018/8/1.
- * 关于树的遍历方法
+ * 关于二叉树的遍历方法
  */
 public class TreeErgodic {
 
