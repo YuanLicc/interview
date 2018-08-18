@@ -35,4 +35,13 @@ public class TreeErgodicTest {
         BinaryTree tree = BinaryTreeFactory.createTree();
         TreeErgodic.midRecursion(tree);
     }
+
+    /**
+     * 层次遍历算法测试
+     */
+    @Test
+    public void levelTraversalTest() {
+        BinaryTree tree = BinaryTreeFactory.createTree();
+        TreeErgodic.levelTraversal(tree);
+    }
 }

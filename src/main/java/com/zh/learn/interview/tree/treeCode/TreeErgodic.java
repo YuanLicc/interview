@@ -2,6 +2,8 @@ package com.zh.learn.interview.tree.treeCode;
 
 import com.zh.learn.interview.tree.treeUtil.BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -75,14 +77,85 @@ public class TreeErgodic {
         BinaryTree node = root;
 
         while(!stack.isEmpty() || node != null) {
-            if(node != null) {
+            if(node != null) { //如果该节点不为null则一直判断该节点的左孩子节点，如果左孩子节点也不为空则入栈
                 stack.push(node);
                 node = node.lChild;
-            } else {
+            } else { // 出栈，进行节点访问，并把右节点进行传递
                 node = stack.pop();
                 node.visit();
                 node = node.rChild;
             }
         }
     }
+
+    /**
+     * 后序遍历递归算法(先左后右最后中)
+     * @param root
+     */
+    public static void backRecursion(BinaryTree root) {
+        if(root == null) {
+            return;
+        }
+        if(root.lChild != null) {
+            backRecursion(root.lChild);
+        }
+
+        if(root.rChild != null) {
+            backRecursion(root.rChild);
+        }
+
+        root.visit();
+    }
+
+    /**
+     * 后序遍历非递归算法
+     * 后序遍历非递归由于是先遍历左子节点再遍历右子节点最后再遍历当前节点，在进行出栈时不知道
+     * 是当前的左节点或者右节点，所以需要一个另外的栈来存储信息，以进行判断。
+     * @param root
+     */
+    public static void backNonRecursion(BinaryTree root) {
+        Stack<BinaryTree> leftStack = new Stack<>();
+        Stack<BinaryTree> rightStack = new Stack<>();
+
+        leftStack.push(root);
+
+        // 当两个栈的其中一个有数据就继续遍历
+        while(!leftStack.empty() || !rightStack.empty()) {
+
+            BinaryTree leftStackPeekNode = leftStack.peek();
+            BinaryTree rightStackPeekNode = rightStack.peek();
+
+
+
+        }
+
+
+    }
+
+    /**
+     * 对二叉树进行层次遍历
+     * 首先利用一个队列的数据结构进行对二叉树层次遍历的实现
+     * @param root
+     */
+    public static void levelTraversal(BinaryTree root) {
+        Queue<BinaryTree> queue = new LinkedList<>();
+        queue.add(root);
+        while(queue.size() > 0) {
+            BinaryTree node = queue.poll();
+            node.visit();
+
+            if(node.lChild != null) {
+                queue.add(node.lChild);
+            }
+
+            if(node.rChild != null) {
+                queue.add(node.rChild);
+            }
+        }
+    }
+
+
+
+
+
 }
