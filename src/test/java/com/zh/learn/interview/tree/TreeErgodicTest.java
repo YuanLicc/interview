@@ -37,6 +37,15 @@ public class TreeErgodicTest {
     }
 
     /**
+     * 后序非递归遍历算法测试
+     */
+    @Test
+    public void backNonRecursionTest() {
+        BinaryTree tree = BinaryTreeFactory.createTree();
+        TreeErgodic.backRecursion(tree);
+    }
+
+    /**
      * 层次遍历算法测试
      */
     @Test

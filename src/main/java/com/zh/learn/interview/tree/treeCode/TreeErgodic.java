@@ -122,14 +122,30 @@ public class TreeErgodic {
         // 当两个栈的其中一个有数据就继续遍历
         while(!leftStack.empty() || !rightStack.empty()) {
 
-            BinaryTree leftStackPeekNode = leftStack.peek();
-            BinaryTree rightStackPeekNode = rightStack.peek();
+            // 如果leftStackPeekNode中最上面的节点为叶子节点则直接打印
+            if(leftStack.peek().lChild == null && leftStack.peek().rChild == null) {
+                BinaryTree popNode = leftStack.pop(); // 出队该节点
+                popNode.visit();
 
-
-
+                // 如果出队的是右侧队列的左节点或者右侧队列的第一个节点只有一个节点则把右侧节点也出队
+                if(popNode == rightStack.peek().lChild || (rightStack.peek().lChild == null && rightStack.peek().rChild == popNode)) {
+                    rightStack.pop().visit();
+                }
+            } else { // 最上面的节点不为叶子节点则把该节点的子节点放入该队列并把这个节点放到右侧的栈中
+                // 左侧队列不为空
+                if(!leftStack.empty()) {
+                    if(leftStack.peek().rChild != null) {
+                        leftStack.push(leftStack.peek().rChild);
+                    }
+                    if(leftStack.peek().lChild != null) {
+                        leftStack.push(leftStack.peek().lChild);
+                    }
+                    rightStack.push(leftStack.pop());
+                } else { // 左侧队列为空则对右侧队列进行出队
+                    rightStack.pop().visit();
+                }
+            }
         }
-
-
     }
 
     /**

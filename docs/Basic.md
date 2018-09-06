@@ -326,3 +326,24 @@ b）如果重载的方法参数个数多于 5 个，采用可变参数。
 3.使用方式（见代码实例） 
  Comparable接口是实现于实体类中，如果需要修改比较方式则需要修改实体类的源代码。 
  Comparator接口独立实现于外部，通过传入比较器实例从而实现对象的排序。
+
+#### finalize()——析构函数的替代者
+
+​	首先提一下析构函数，析构函数与构造函数相反，当对象在的函数已经调用完毕的时候，系统会自动的执行析构函数（析构函数存在于C++等语言中）。
+
+​	java提供[**finalize**](http://www.51testing.com/javascr%C4%ABpt:;)()方法，垃圾回收器准备释放内存的时候，会先调用finalize()。 
+
+​	Java 技术允许使用 finalize() 方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在 Object 类中定义的，因此所有的类都继承了它。子类覆盖 finalize() 方法以整理系统资源或者执行其他清理工作。finalize() 方法是在垃圾收集器删除对象之前对这个对象调用的。 
+
+####线程状态转换图
+
+![img](https://uploadfiles.nowcoder.com/images/20180701/3807435_1530424646801_3658A873352D1D5FB9EF74D9F9F1F0B5) 
+
+#### 关于servlet
+
+init方法： 是在servlet实例创建时调用的方法，用于创建或打开任何与servlet相的资源和初始 化servlet的状态，Servlet规范保证调用init方法前不会处理任何请求 
+
+ service方法：是servlet真正处理客户端传过来的请求的方法，由web容器调用， 根据HTTP请求方法（GET、POST等），将请求分发到doGet、doPost等方法 
+
+destory方法：是在servlet实例被销毁时由web容器调用。Servlet规范确保在destroy方法调用之 前所有请求的处理均完成，需要覆盖destroy方法的情况：释放任何在init方法中 打开的与servlet相关的资源存储servlet的状态
+
