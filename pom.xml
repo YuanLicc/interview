@@ -36,6 +36,7 @@
         <changelog.version>2.3</changelog.version>
         <cobertura.version>2.7</cobertura.version>
         <argLine>-Dfile.encoding=UTF-8</argLine>
+        <servlet.version>4.0.1</servlet.version>
     </properties>
 
     <!--仓库配置-->
