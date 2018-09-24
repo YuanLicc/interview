@@ -17,6 +17,7 @@
         <module>maven</module>
         <module>interview-experience</module>
         <module>linux</module>
+        <module>nio</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
