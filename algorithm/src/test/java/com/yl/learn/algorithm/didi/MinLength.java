@@ -10,7 +10,6 @@ public class MinLength {
 
             System.out.println(min(test[0], test[i]));
         }
-
     }
 
     public static int min(String a, String b) {
