@@ -15,10 +15,11 @@
         <module>lambda</module>
         <module>design</module>
         <module>maven</module>
-        <module>interview-experience</module>
+        <module>experience</module>
         <module>linux</module>
         <module>nio</module>
         <module>redis</module>
+        <module>hive</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
