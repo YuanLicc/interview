@@ -20,6 +20,7 @@
         <module>nio</module>
         <module>redis</module>
         <module>hive</module>
+        <module>hadoop</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
