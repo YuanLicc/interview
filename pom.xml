@@ -19,8 +19,8 @@
         <module>linux</module>
         <module>nio</module>
         <module>redis</module>
-        <module>hive</module>
         <module>hadoop</module>
+        <module>dw</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
@@ -45,11 +45,11 @@
 
     <!--仓库配置-->
     <repositories>
-        <repository>
-            <id>github-repo</id>
-            <name>github-repo</name>
-            <url>https://raw.github.com/YuanLicc/maven-repository/1.0/</url>
-        </repository>
+        <!--<repository>-->
+            <!--<id>github-repo</id>-->
+            <!--<name>github-repo</name>-->
+            <!--<url>https://raw.github.com/YuanLicc/maven-repository/1.0/</url>-->
+        <!--</repository>-->
     </repositories>
 
     <reporting>
