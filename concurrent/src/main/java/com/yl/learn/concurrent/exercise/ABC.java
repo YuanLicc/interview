@@ -10,11 +10,8 @@ public class ABC {
         Thread thread1 = new Thread(new ABC.Printer(cLock, aLock, "A"));
         Thread thread2 = new Thread(new ABC.Printer(aLock, bLock, "B"));
         Thread thread3 = new Thread(new ABC.Printer(bLock, cLock, "C"));
-
         thread1.start();
-        Thread.sleep(1000);
         thread2.start();
-        Thread.sleep(1000);
         thread3.start();
 
     }

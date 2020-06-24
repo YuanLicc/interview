@@ -15,6 +15,8 @@
         <hadoop-version>3.2.1</hadoop-version>
     </properties>
 
+
+
     <dependencies>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -29,6 +31,7 @@
     </dependencies>
 
     <build>
+        <finalName>mr-word-count</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

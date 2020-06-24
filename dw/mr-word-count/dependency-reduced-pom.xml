@@ -8,6 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>mr-word-count</artifactId>
   <build>
+    <finalName>mr-word-count</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
