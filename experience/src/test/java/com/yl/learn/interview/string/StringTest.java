@@ -3,9 +3,9 @@ package com.yl.learn.interview.string;
 import com.yl.learn.interview.algorithm.string.AllPermutation;
 import com.yl.learn.interview.algorithm.string.Reverse;
 import com.yl.learn.interview.algorithm.string.ReverseOrder;
-import com.yl.learn.interview.util.ObjectUtil;
-import com.yl.learn.interview.util.PrintUtil;
-import com.yl.learn.interview.util.StringUtil;
+import com.yl.learn.util.util.ObjectUtil;
+import com.yl.learn.util.util.PrintUtil;
+import com.yl.learn.util.util.StringUtil;
 import junit.framework.TestCase;
 
 public class StringTest extends TestCase {

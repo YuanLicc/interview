@@ -1,8 +1,8 @@
 package com.yl.learn.interview.algorithm.util;
 
-import com.yl.learn.interview.util.PrintUtil;
-import com.yl.learn.interview.util.StringUtil;
-import com.yl.learn.interview.util.Timer;
+import com.yl.learn.util.util.PrintUtil;
+import com.yl.learn.util.util.StringUtil;
+import com.yl.learn.util.util.Timer;
 import junit.framework.TestCase;
 
 public class PrintUtilTest extends TestCase {

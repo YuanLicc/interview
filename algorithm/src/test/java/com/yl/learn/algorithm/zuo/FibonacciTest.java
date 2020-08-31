@@ -1,10 +1,10 @@
 package com.yl.learn.algorithm.zuo;
 
-import com.yl.common.util.PrintUtil;
 import com.yl.learn.algorithm.test.TestSuper;
 import com.yl.learn.algorithm.zuo.fibo.Cow;
 import com.yl.learn.algorithm.zuo.fibo.Fibonacci;
 import com.yl.learn.algorithm.zuo.fibo.Jump;
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 public class FibonacciTest extends TestSuper {

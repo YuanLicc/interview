@@ -1,4 +1,4 @@
-package com.yl.learn.interview.tree;
+package com.yl.learn.util.tree;
 
 /**
  * 二叉树构造器

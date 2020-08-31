@@ -1,6 +1,6 @@
 package com.yl.learn.interview.jdbc;
 
-import com.yl.learn.interview.util.PrintUtil;
+import com.yl.learn.util.util.PrintUtil;
 
 import java.sql.Driver;
 

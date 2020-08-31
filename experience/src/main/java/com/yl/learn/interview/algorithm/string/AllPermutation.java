@@ -1,6 +1,6 @@
 package com.yl.learn.interview.algorithm.string;
 
-import com.yl.learn.interview.util.CharUtil;
+import com.yl.learn.util.util.CharUtil;
 
 import java.util.ArrayList;
 import java.util.List;

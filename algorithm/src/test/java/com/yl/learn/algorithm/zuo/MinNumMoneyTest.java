@@ -1,6 +1,6 @@
 package com.yl.learn.algorithm.zuo;
 
-import com.yl.common.util.PrintUtil;
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 import java.util.Arrays;

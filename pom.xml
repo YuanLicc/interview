@@ -21,6 +21,7 @@
         <module>redis</module>
         <module>hadoop</module>
         <module>dw</module>
+        <module>util</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
@@ -45,11 +46,11 @@
 
     <!--仓库配置-->
     <repositories>
-        <!--<repository>-->
-            <!--<id>github-repo</id>-->
-            <!--<name>github-repo</name>-->
-            <!--<url>https://raw.github.com/YuanLicc/maven-repository/1.0/</url>-->
-        <!--</repository>-->
+        <repository>
+            <id>github-repo</id>
+            <name>github-repo</name>
+            <url>https://raw.github.com/YuanLicc/maven-repository/1.0/</url>
+        </repository>
     </repositories>
 
     <reporting>
@@ -132,7 +133,6 @@
     </build>
 
     <dependencies>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

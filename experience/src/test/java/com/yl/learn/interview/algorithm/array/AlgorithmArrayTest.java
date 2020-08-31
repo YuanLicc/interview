@@ -1,7 +1,7 @@
 package com.yl.learn.interview.algorithm.array;
 
-import com.yl.learn.interview.util.PrintUtil;
-import com.yl.learn.interview.util.Timer;
+import com.yl.learn.util.util.PrintUtil;
+import com.yl.learn.util.util.Timer;
 import junit.framework.TestCase;
 
 public class AlgorithmArrayTest extends TestCase {

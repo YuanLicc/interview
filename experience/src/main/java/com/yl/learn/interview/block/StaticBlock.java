@@ -1,6 +1,6 @@
 package com.yl.learn.interview.block;
 
-import com.yl.learn.interview.util.PrintUtil;
+import com.yl.learn.util.util.PrintUtil;
 
 public class StaticBlock {
 

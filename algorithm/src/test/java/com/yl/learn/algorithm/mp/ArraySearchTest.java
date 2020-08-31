@@ -1,8 +1,8 @@
 package com.yl.learn.algorithm.mp;
 
-import com.yl.common.util.PrintUtil;
 import com.yl.learn.algorithm.pm.ArraySearch;
 import com.yl.learn.algorithm.test.TestSuper;
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 public class ArraySearchTest extends TestSuper {

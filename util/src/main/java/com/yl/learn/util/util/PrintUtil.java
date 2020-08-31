@@ -1,8 +1,6 @@
-package com.yl.learn.interview.util;
+package com.yl.learn.util.util;
 
-import com.yl.learn.interview.function.VoidNoParamsFunction;
-
-import java.util.function.Consumer;
+import com.yl.learn.util.function.VoidNoParamsFunction;
 
 /**
  * 控制台输出工具类

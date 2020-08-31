@@ -1,6 +1,6 @@
 package com.yl.learn.algorithm.search.binary;
 
-import com.yl.common.util.PrintUtil;
+import com.yl.learn.util.util.PrintUtil;
 import com.yl.learn.algorithm.test.TestSuper;
 import org.junit.Test;
 

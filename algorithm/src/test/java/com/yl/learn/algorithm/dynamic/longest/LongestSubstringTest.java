@@ -1,8 +1,8 @@
 package com.yl.learn.algorithm.dynamic.longest;
 
-import com.yl.common.util.PrintUtil;
 import com.yl.learn.algorithm.dynamic.backpack.Backpack;
 import com.yl.learn.algorithm.test.TestSuper;
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 import java.util.Arrays;

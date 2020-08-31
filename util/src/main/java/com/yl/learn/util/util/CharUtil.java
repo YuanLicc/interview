@@ -1,4 +1,4 @@
-package com.yl.learn.interview.util;
+package com.yl.learn.util.util;
 
 /**
  * char 工具类

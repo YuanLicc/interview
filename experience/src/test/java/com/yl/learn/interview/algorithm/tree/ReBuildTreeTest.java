@@ -1,8 +1,8 @@
 package com.yl.learn.interview.algorithm.tree;
 
-import com.yl.learn.interview.tree.TreeBuilder;
-import com.yl.learn.interview.tree.TreeNode;
-import com.yl.learn.interview.util.PrintUtil;
+import com.yl.learn.util.tree.TreeBuilder;
+import com.yl.learn.util.tree.TreeNode;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class ReBuildTreeTest extends TestCase {

@@ -7,6 +7,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class BinaryTreeLevelOrder {
+    
+    public List<Integer> rightSideView(TreeNode root) {
+        
+        if(root == null) {
+            return new ArrayList<>(0);
+        }
+        List<List<Integer>> rr = levelOrder(root);
+        
+        List<Integer> rs = new ArrayList<>(rr.size());
+        rr.stream().forEach(list -> {
+            rs.add(list.get(list.size() - 1));
+        });
+        
+        return rs;
+    }
 
     public List<List<Integer>> levelOrder(TreeNode<Integer> node) {
         

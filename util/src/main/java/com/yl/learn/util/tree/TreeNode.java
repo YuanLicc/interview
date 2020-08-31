@@ -1,4 +1,4 @@
-package com.yl.learn.interview.tree;
+package com.yl.learn.util.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,7 +1,7 @@
 package com.yl.learn.algorithm.sort.select;
 
-import com.yl.common.util.PrintUtil;
 import com.yl.learn.algorithm.test.TestSuper;
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 import java.util.Arrays;

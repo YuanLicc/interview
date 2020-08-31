@@ -1,6 +1,6 @@
 package com.zh.learn.interview.tree.treeUtil;
 
-import com.yl.learn.interview.util.PrintUtil;
+import com.yl.learn.util.util.PrintUtil;
 
 /**
  * Created by hong on 2018/8/1.

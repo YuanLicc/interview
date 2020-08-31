@@ -1,7 +1,8 @@
 package com.yl.learn.algorithm.offer;
 
-import com.yl.common.util.PrintUtil;
+import com.yl.learn.util.util.PrintUtil;
 import com.yl.learn.algorithm.test.TestSuper;
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 
