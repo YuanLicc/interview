@@ -7,6 +7,7 @@ public class FindMedianSortedArrays {
         // 确保小数组为 nums1
         exchange(nums1, nums2);
         int[] minArr = nums1;
+        
         int[] maxArr = nums2;
         
         int minArrLen = minArr.length;
