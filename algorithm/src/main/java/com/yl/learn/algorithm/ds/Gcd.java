@@ -18,9 +18,9 @@ public class Gcd extends TestCase {
     }
     
     public void testGcdRecursion() {
-        PrintUtil.println(gcd(10, 100));
-        PrintUtil.println(gcd(100, 17));
-        PrintUtil.println(gcd(11232424, 3232424));
+        PrintUtil.template("gcd: 10, 100", () -> PrintUtil.println(gcd(10, 100)));
+        PrintUtil.template("gcd: 100, 17", () -> PrintUtil.println(gcd(100, 17)));
+        PrintUtil.template("gcd: 11232424, 3232424", () -> PrintUtil.println(gcd(11232424, 3232424)));
     }
     
     
