@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 
 /**
  * N 个数字的最大公约数
+ * gcd(a, b, c) = gcd(gcd(a, b), c)
  */
 public class GcdN extends TestCase {
     
