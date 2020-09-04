@@ -132,9 +132,6 @@ public class PrintUtil {
     }
     
     public static <T> void printlnArray(T[] array) {
-        PrintUtil.printlnLine();
-        PrintUtil.println(StringUtil.nullToEmpty(array.toString()));
-        
         if(array == null) return;
         for (int i = 0; i < array.length; i++) {
             PrintUtil.print(array[i], "", i == array.length - 1 ? "" : ", ");

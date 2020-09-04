@@ -2,6 +2,8 @@ package com.yl.learn.util.util;
 
 import junit.framework.TestCase;
 
+import java.util.ArrayList;
+
 public class SortUtil extends TestCase {
     
     public static <T extends Comparable<T>> void selectSort(T[] array) {
@@ -78,15 +80,32 @@ public class SortUtil extends TestCase {
     private static <T extends Comparable<T>> void merge(T[] array, int leftStart, int leftEnd, int rightEnd) {
         int leftIndex = leftStart;
         int rightIndex = leftEnd + 1;
-
-
+    
+        ArrayList<T> tmpList = new ArrayList<>(rightEnd - leftStart + 1);
+        
         while (leftIndex <= leftEnd && rightIndex <= rightEnd) {
-
-            if(array[leftIndex].compareTo(array[rightIndex]) > 0) {
-
+            if(array[leftIndex].compareTo(array[rightIndex]) < 0) {
+                tmpList.add(array[leftIndex++]);
             }
-
+            else {
+                tmpList.add(array[rightIndex++]);
+            }
         }
+        
+        while(leftIndex <= leftEnd) {
+            tmpList.add(array[leftIndex++]);
+        }
+        
+        while (rightIndex <= rightEnd) {
+            tmpList.add(array[rightIndex++]);
+        }
+    }
+    
+    public void testMergeSort() {
+        Integer[] arr = new Integer[]{1, -1, 20, 10, 11, 33};
+        PrintUtil.printlnArray(arr);
+        mergeSort(arr);
+        PrintUtil.printlnArray(arr);
     }
 
     public void testBubbleSort() {
