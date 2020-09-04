@@ -6,6 +6,42 @@ import java.util.ArrayList;
 
 public class SortUtil extends TestCase {
     
+    public static <T extends Comparable<T>> void quickSort(T[] array) {
+        quickSort(array, 0, array.length - 1);
+    }
+    
+    private static <T extends Comparable<T>> void quickSort(T[] array, int start, int end) {
+        if(start < end) {
+            int startIndex = start;
+            int endIndex = end;
+            T tmp = array[start];
+            // 12
+            // 12 1 21 4 8
+            while(startIndex != endIndex) {
+                
+                while(startIndex < endIndex) {
+                    if(array[endIndex].compareTo(tmp) <= 0) {
+                        array[startIndex++] = array[endIndex];
+                        break;
+                    }
+                    endIndex--;
+                }
+                
+                while(startIndex < endIndex) {
+                    if(array[startIndex].compareTo(tmp) > 0) {
+                        array[endIndex--] = array[startIndex];
+                    }
+                    startIndex++;
+                }
+            }
+            
+            array[startIndex] = tmp;
+            
+            quickSort(array, start, startIndex);
+            quickSort(array, startIndex + 1, end);
+        }
+    }
+    
     public static <T extends Comparable<T>> void selectSort(T[] array) {
         if(array == null || array.length <= 1) return;
         
@@ -103,6 +139,13 @@ public class SortUtil extends TestCase {
         for(int i = leftStart; i <= rightEnd; i++) {
             array[i] = tmpList.get(i - leftStart);
         }
+    }
+    
+    public void testQuickSort() {
+        Integer[] arr = new Integer[]{1, -1, -2, 10, 11, 33};
+        PrintUtil.printlnArray(arr);
+        quickSort(arr);
+        PrintUtil.printlnArray(arr);
     }
     
     public void testMergeSort() {
