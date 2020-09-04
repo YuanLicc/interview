@@ -99,10 +99,14 @@ public class SortUtil extends TestCase {
         while (rightIndex <= rightEnd) {
             tmpList.add(array[rightIndex++]);
         }
+        
+        for(int i = leftStart; i <= rightEnd; i++) {
+            array[i] = tmpList.get(i - leftStart);
+        }
     }
     
     public void testMergeSort() {
-        Integer[] arr = new Integer[]{1, -1, 20, 10, 11, 33};
+        Integer[] arr = new Integer[]{1, -1, -2, 10, 11, 33};
         PrintUtil.printlnArray(arr);
         mergeSort(arr);
         PrintUtil.printlnArray(arr);
