@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 public class SortUtil extends TestCase {
     
+    /**
+     * O(nlogn) - O(n^2)
+     * @param array 给定待排序数组
+     * @param <T> 数组元素类型
+     */
     public static <T extends Comparable<T>> void quickSort(T[] array) {
         quickSort(array, 0, array.length - 1);
     }
@@ -42,6 +47,11 @@ public class SortUtil extends TestCase {
         }
     }
     
+    /**
+     * O(n^2)
+     * @param array
+     * @param <T>
+     */
     public static <T extends Comparable<T>> void selectSort(T[] array) {
         if(array == null || array.length <= 1) return;
         
@@ -60,7 +70,12 @@ public class SortUtil extends TestCase {
             index++;
         }
     }
-
+    
+    /**
+     * 插入排序 O(n^2)
+     * @param array
+     * @param <T>
+     */
     public static <T extends Comparable<T>> void insertSort(T[] array) {
         if(array == null || array.length <= 1) return;
 
@@ -75,12 +90,18 @@ public class SortUtil extends TestCase {
             }
         }
     }
-
+    
+    /**
+     * 冒泡排序 O(n^2)
+     * @param array
+     * @param <T>
+     */
     public static <T extends Comparable<T>> void bubbleSort(T[] array) {
         if(array == null || array.length <= 1) return;
 
         for(int i = 0; i < array.length; i++) {
             for(int j = i + 1; j < array.length; j++) {
+                // (n - 1) + (n - 2) + ... + 1 = (n - 1) * n / 2
                 if(array[j].compareTo(array[j - 1]) < 0) {
                     T tmp = array[j];
                     array[j] = array[j - 1];
@@ -89,7 +110,12 @@ public class SortUtil extends TestCase {
             }
         }
     }
-
+    
+    /**
+     * 归并排序 O(nlogn)
+     * @param array
+     * @param <T>
+     */
     public static <T extends Comparable<T>> void mergeSort(T[] array) {
         if(array == null || array.length <= 1) return;
         mergeSort(array, 0, array.length - 1);
@@ -162,7 +188,7 @@ public class SortUtil extends TestCase {
     }
 
     public void testInsertSort() {
-        Integer[] arr = new Integer[]{1, -1, 20, 10, 11, 33};
+        Integer[] arr = new Integer[]{1, -1, -2, 10, 11, 33};
         insertSort(arr);
         PrintUtil.printlnArray(arr);
     }
