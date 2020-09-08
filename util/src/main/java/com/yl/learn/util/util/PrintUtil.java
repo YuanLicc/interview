@@ -130,4 +130,20 @@ public class PrintUtil {
         PrintUtil.println(StringUtil.nullToEmpty(title));
         contentAction.action();
     }
+    
+    public static <T> void printlnArray(T[] array) {
+        if(array == null) return;
+        for (int i = 0; i < array.length; i++) {
+            PrintUtil.print(array[i].toString(), "", i == array.length - 1 ? "" : ", ");
+        }
+        PrintUtil.println();
+    }
+    
+    public static void printlnArray(int[] array) {
+        if(array == null) return;
+        for (int i = 0; i < array.length; i++) {
+            PrintUtil.print(array[i], "", i == array.length - 1 ? "" : ", ");
+        }
+        PrintUtil.println();
+    }
 }

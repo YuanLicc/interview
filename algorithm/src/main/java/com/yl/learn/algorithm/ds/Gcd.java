@@ -17,10 +17,22 @@ public class Gcd extends TestCase {
         return a;
     }
     
+    public long gcdRecursion(long a, long b) {
+        if(b == 0) return a;
+        
+        return gcd(b, a % b);
+    }
+    
     public void testGcdRecursion() {
-        PrintUtil.println(gcd(10, 100));
-        PrintUtil.println(gcd(100, 17));
-        PrintUtil.println(gcd(11232424, 3232424));
+        PrintUtil.template("gcd recursion: 10, 100", () -> PrintUtil.println(gcdRecursion(10, 100)));
+        PrintUtil.template("gcd recursion: 100, 17", () -> PrintUtil.println(gcdRecursion(100, 17)));
+        PrintUtil.template("gcd recursion: 11232424, 3232424", () -> PrintUtil.println(gcdRecursion(11232424, 3232424)));
+    }
+    
+    public void testGcd() {
+        PrintUtil.template("gcd: 10, 100", () -> PrintUtil.println(gcd(10, 100)));
+        PrintUtil.template("gcd: 100, 17", () -> PrintUtil.println(gcd(100, 17)));
+        PrintUtil.template("gcd: 11232424, 3232424", () -> PrintUtil.println(gcd(11232424, 3232424)));
     }
     
     
