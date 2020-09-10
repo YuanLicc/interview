@@ -7,11 +7,11 @@ package com.yl.learn.algorithm.yuanfudao;
  * 示例 :
  * 给定二叉树
  *
- *           1
- *          / \
- *         2   3
- *        / \
- *       4   5
+ *     1
+ *    / \
+ *   2   3
+ *  / \
+ * 4   5
  * 输出 3 （4，2，1，4）
  */
 import com.yl.learn.util.tree.TreeNode;
