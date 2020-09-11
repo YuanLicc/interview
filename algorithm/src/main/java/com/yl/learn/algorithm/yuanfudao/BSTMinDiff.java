@@ -36,7 +36,26 @@ public class BSTMinDiff extends TestCase {
             }
         }
         
+        recursion(root, null);
+        
         return min;
+    }
+    
+    int min1 = Integer.MAX_VALUE;
+    
+    private void recursion(TreeNode<Integer> root, TreeNode<Integer> pre) {
+        
+        if(root == null) return;
+        
+        recursion(root.left, pre);
+        if(pre == null) {
+            pre = root;
+        }
+        else {
+            min1 = Math.min(root.value - pre.value, min1);
+            pre = root;
+        }
+        recursion(root.right, pre);
     }
     
     public void test() {
