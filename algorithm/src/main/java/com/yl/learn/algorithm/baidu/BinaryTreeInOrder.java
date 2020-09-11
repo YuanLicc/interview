@@ -7,19 +7,19 @@ import java.util.List;
 
 public class BinaryTreeInOrder {
     
-    public List<Integer> inOrderTraversal(TreeNode<Integer> root) {
+    public List<Integer> inOrderTraversal(TreeNode root) {
         
         List<Integer> rs = new ArrayList<>();
         inOrderTraversal(root, rs);
         return rs;
     }
     
-    private void inOrderTraversal(TreeNode<Integer> root, List<Integer> rs) {
+    private void inOrderTraversal(TreeNode root, List<Integer> rs) {
         if(root == null) {
             return;
         }
         inOrderTraversal(root.left, rs);
-        rs.add(root.value);
+        rs.add(root.val);
         inOrderTraversal(root.right, rs);
     }
     

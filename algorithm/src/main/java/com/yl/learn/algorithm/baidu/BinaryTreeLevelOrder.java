@@ -23,12 +23,12 @@ public class BinaryTreeLevelOrder {
         return rs;
     }
 
-    public List<List<Integer>> levelOrder(TreeNode<Integer> node) {
+    public List<List<Integer>> levelOrder(TreeNode node) {
         
         List<List<Integer>> rs = new ArrayList<>();
         if(node == null) return rs;
     
-        LinkedList<TreeNode<Integer>> queue = new LinkedList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
         queue.addLast(node);
         queue.addLast(null);
         
@@ -37,8 +37,8 @@ public class BinaryTreeLevelOrder {
             ArrayList<Integer> level = new ArrayList<>();
             
             while(queue.getFirst() != null) {
-                TreeNode<Integer> levelNode = queue.removeFirst();
-                level.add(levelNode.value);
+                TreeNode levelNode = queue.removeFirst();
+                level.add(levelNode.val);
                 if(levelNode.left != null) queue.addLast(levelNode.left);
                 if(levelNode.right != null) queue.addLast(levelNode.right);
             }

@@ -1,11 +1,11 @@
 package com.yl.learn.algorithm;
 
-public class TreeNode<T> {
+public class TreeNode {
 
-    public TreeNode<T> left;
+    public TreeNode left;
 
-    public TreeNode<T> right;
+    public TreeNode right;
 
-    public T value;
+    public int val;
 
 }
