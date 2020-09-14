@@ -13,11 +13,11 @@ import com.yl.learn.algorithm.TreeNode;
  */
 public class CreateBinaryTree {
 
-    public static TreeNode<Integer> create(int[] pre, int[] in) {
+    public static TreeNode create(int[] pre, int[] in) {
         return create(pre, 0, pre.length - 1, in, 0, in.length - 1);
     }
 
-    private static TreeNode<Integer> create(int[] pre, int i, int i1, int[] in, int i2, int i3) {
+    private static TreeNode create(int[] pre, int i, int i1, int[] in, int i2, int i3) {
 
         if(i > i1) {
             return null;
@@ -25,8 +25,8 @@ public class CreateBinaryTree {
 
         int value = pre[i];
 
-        TreeNode<Integer> root = new TreeNode<>();
-        root.value = value;
+        TreeNode root = new TreeNode();
+        root.val = value;
 
         int count = 0;
         for(int j = i2; j <= i3; j++) {
