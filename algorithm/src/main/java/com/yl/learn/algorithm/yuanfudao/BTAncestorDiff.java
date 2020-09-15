@@ -31,17 +31,17 @@ public class BTAncestorDiff extends TestCase {
     }
 
     private int maxAncestorDiff(TreeNode root, int max, int min) {
-        if(root == null || (root.left == null && root.right == null)) return 0;
+        if(root == null) return 0;
 
-        int maxMinus = Math.abs(max - root.val);
-        int minMinus = Math.abs(min - root.val);
-        max = Math.max(max, Math.max(maxMinus, minMinus));
-        min = Math.min(min, Math.min(maxMinus, minMinus));
+        int maxMinus = Math.max(Math.abs(max - root.val), Math.abs(min - root.val));
+        
+        max = Math.max(max, root.val);
+        min = Math.min(min, root.val);
 
         int left = maxAncestorDiff(root.left, max, min);
         int right = maxAncestorDiff(root.right, max, min);
 
-        return Math.max(left, right);
+        return Math.max(Math.max(left, right), maxMinus);
     }
 
     private int max(TreeNode node, List<TreeNode> travels, int start, int end) {
