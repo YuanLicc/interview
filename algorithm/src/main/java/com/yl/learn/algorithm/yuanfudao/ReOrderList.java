@@ -53,7 +53,7 @@ public class ReOrderList extends TestCase {
 
         ListNode temp = head;
 
-        while(temp != null) {
+        while(temp != null && right != null) {
             ListNode rightNext = right.next;
             ListNode tempNext = temp.next;
 
