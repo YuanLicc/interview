@@ -1,6 +1,7 @@
 package com.yl.learn.algorithm.yuanfudao;
 
 import com.yl.learn.algorithm.ListNode;
+import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
  * 来源：力扣（LeetCode）143
  * 链接：https://leetcode-cn.com/problems/reorder-list
  */
-public class ReOrderList {
+public class ReOrderList extends TestCase {
     
     public void reorderList(ListNode head) {
         List<ListNode> lis = new ArrayList<>();
@@ -42,5 +43,67 @@ public class ReOrderList {
             index--;
         }
         if(temp != null) temp.next = null;
+    }
+
+    public void reorderList1(ListNode head) {
+        if(head == null) return;
+
+        ListNode middle = middle(head);
+        ListNode right = reverse(middle);
+
+        ListNode temp = head;
+
+        while(temp != null) {
+            ListNode rightNext = right.next;
+            ListNode tempNext = temp.next;
+
+            right.next = tempNext;
+            temp.next = right;
+            right = rightNext;
+            temp = tempNext;
+        }
+
+        if(temp != null) temp.next = null;
+    }
+
+    private ListNode reverse(ListNode node) {
+
+        ListNode pre = node;
+        ListNode next = node.next;
+        pre.next = null;
+
+        while (next != null) {
+            ListNode nextNext = next.next;
+            next.next = pre;
+            pre = next;
+            next = nextNext;
+        }
+
+        return pre;
+    }
+
+    private ListNode middle(ListNode node) {
+
+        ListNode middle = node;
+        ListNode quick = node;
+
+        while(quick != null) {
+
+            middle = middle.next;
+
+            if(quick.next == null) {
+                quick = null;
+            }
+            else {
+                quick = quick.next.next;
+            }
+
+        }
+        return middle;
+    }
+
+    public void test() {
+        ListNode listNode = ListNode.Builder.build(new int[]{1,2,3,4,5,6,7});
+        reorderList1(listNode);
     }
 }
