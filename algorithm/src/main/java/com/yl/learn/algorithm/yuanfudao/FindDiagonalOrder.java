@@ -2,70 +2,66 @@ package com.yl.learn.algorithm.yuanfudao;
 
 import junit.framework.TestCase;
 
+/**
+ * 给定一个含有 M x N 个元素的矩阵（M 行，N 列），请以对角线遍历的顺序返回这个矩阵中的所有元素，对角线遍历如下图所示。
+ *
+ * 示例:
+ * 输入:
+ *  [
+ *  [ 1, 2, 3 ],
+ *  [ 4, 5, 6 ],
+ *  [ 7, 8, 9 ]
+ *  ]
+ *
+ * 输出:  [1,2,4,7,5,3,6,8,9]
+ *
+ * 来源：力扣（LeetCode）498
+ * 链接：https://leetcode-cn.com/problems/diagonal-traverse
+ */
 public class FindDiagonalOrder extends TestCase {
 
     public int[] findDiagonalOrder(int[][] matrix) {
-
+    
         if(matrix == null || matrix.length == 0) return new int[0];
-
+    
         int[] rs = new int[matrix.length * matrix[0].length];
         int index = 0;
-
-        if(matrix.length == 1 || matrix[0].length == 1) {
-            for(int i = 0; i < matrix.length; i++) {
-                for(int j = 0; j < matrix[i].length; j++) {
-                    rs[index++] = matrix[i][j];
-                }
-            }
-            return rs;
-        }
         int i = 0;
         int j = 0;
-        rs[0] = matrix[0][0];
-        index = 1;
-
-        int cn = 1;
+        boolean isUp = true;
         while(index < rs.length) {
-            if(j == 0 && i < matrix[0].length && cn % 2 == 1) {
-                i++;
-                while(i >= 0 && j < matrix.length) {
-                    rs[index++] = matrix[j][i];
-                    j++;
+            if(isUp) {
+                while (i >= 0 && j <= matrix[0].length - 1) {
+                    rs[index++] = matrix[i][j];
                     i--;
+                    j++;
                 }
-                j--;
                 i++;
-                cn++;
-            }
-            else if(i == 0 && j < matrix.length - 1 && cn % 2 == 0) {
-                j++;
-                while(j >= 0 && i < matrix[0].length) {
-                    rs[index++] = matrix[j][i];
-                    j--;
+                j--;
+                if(j == matrix[0].length - 1) {
                     i++;
                 }
-                j++;
-                i--;
-            }
-            else if(i == matrix[0].length - 1) {
-                j++;
-                while(j < matrix.length && i >= 0) {
-                    rs[index++] = matrix[j][i];
+                else {
                     j++;
-                    i--;
                 }
-                i++;
-                j--;
+                isUp = false;
             }
             else {
-                i++;
-                while(i < matrix[0].length && j > 0) {
-                    rs[index++] = matrix[j][i];
+                while (j >= 0 && i <= matrix.length - 1) {
+                    rs[index++] = matrix[i][j];
                     i++;
                     j--;
                 }
                 i--;
                 j++;
+            
+                if(i == matrix.length - 1) {
+                    j++;
+                }
+                else {
+                    i++;
+                }
+                isUp = true;
             }
         }
         return rs;
@@ -74,7 +70,8 @@ public class FindDiagonalOrder extends TestCase {
     public void test() {
         int [][] a = new int[][]{
                 { 1, 2, 1},
-                { 3, 4, 2}
+                { 3, 4, 2} // 1 2 1 3 4 2
+                           // 1 2 3 4 1 2
         };
 
         findDiagonalOrder(a);
