@@ -40,6 +40,37 @@ public class BTPathSum extends TestCase {
         return cnt;
     }
     
+    public int pathSum1(TreeNode root, int sum) {
+        if(root == null) return 0;
+        
+        sum(root, null, sum);
+        
+        return cnt;
+    }
+    
+    private void sum(TreeNode node, int[] sums, int sum) {
+        if(node == null) return;
+        if(sums == null) {
+            sums = new int[1];
+            sums[0] = node.val;
+        }
+        else {
+            int[] tmp = new int[sums.length + 1];
+            
+            for(int i = 0; i < sums.length; i++) {
+                tmp[i] = sums[i] + node.val;
+                if(tmp[i] == sum) cnt++;
+            }
+            tmp[tmp.length - 1] = node.val;
+            
+            sums = tmp;
+        }
+        
+        if(node.val == sum) cnt++;
+        sum(node.left, sums, sum);
+        sum(node.right, sums, sum);
+    }
+    
     private void sum(TreeNode node, int sum) {
         if(node == null) return;
         
