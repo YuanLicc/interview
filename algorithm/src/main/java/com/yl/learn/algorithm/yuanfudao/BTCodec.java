@@ -85,8 +85,9 @@ public class BTCodec extends TestCase {
                 TreeNode right = i + 1 < nodes.length ? toNode(nodes[i + 1]) : null;
                 if(i + 1 < nodes.length) treeNodes[i + 1] = right;
                 
-                if(left != null) upLevelNodes++;
-                if(right != null) upLevelNodes++;
+                if(left != null || right != null) {
+                    upLevelNodes += 2;
+                }
                 
                 p.left = left;
                 p.right = right;
