@@ -38,6 +38,26 @@ public class LowestCommonAncestor extends TestCase {
 
         return null;
     }
+    
+    TreeNode rs = null;
+    
+    private boolean lowest(TreeNode node, TreeNode p, TreeNode q) {
+        if(node == null) return false;
+        
+        boolean left = lowest(node.left, p, q);
+        boolean right = lowest(node.right, p, q);
+        
+        if((left && right) || ((left || right) && (node.val == p.val || node.val == q.val))) {
+            rs = node;
+            return true;
+        }
+        else if(!left && !right) {
+            return (node.val == p.val || node.val == q.val);
+        }
+        else {
+            return true;
+        }
+    }
 
     private List<Integer> preTravel(TreeNode node) {
         List<Integer> rs = new ArrayList<>();
