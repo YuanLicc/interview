@@ -38,8 +38,29 @@ public class LongestValidParentheses extends TestCase {
         return max * 2;
     }
 
+    public int longestValidParentheses1(String s) {
+        if(s == null || s.length() <= 1) return 0;
+
+        int max = 0;
+        int[] cell = new int[s.length()];
+        //(())
+        for(int i = 1; i < s.length(); i++) {
+            if(s.charAt(i) == ')') {
+                if(s.charAt(i - 1) == '(') {
+                    cell[i] = 2 + (i - 2 > 0 ? cell[i - 2] : 0);
+                }
+                else if(i - cell[i - 1] - 1 >= 0 && s.charAt(i - cell[i - 1] - 1) == '(') {
+                    cell[i] = 2 + cell[i - 1] + (i - cell[i - 1] - 2 >= 0 ? cell[i - cell[i - 1] - 2] : 0);
+                }
+            }
+            max = max > cell[i] ? max : cell[i];
+        }
+
+        return max;
+    }
+
     public void test() {
-        longestValidParentheses("()(())");
+        longestValidParentheses1("(()())");
     }
 
 }
