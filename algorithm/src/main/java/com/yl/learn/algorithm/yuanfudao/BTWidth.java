@@ -4,7 +4,9 @@ import com.yl.learn.algorithm.TreeNode;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 给定一个二叉树，编写一个函数来获取这个树的最大宽度。树的宽度是所有层中的最大宽度。
@@ -38,6 +40,34 @@ public class BTWidth extends TestCase {
         levelTravel(rootLevel);
         
         return max;
+    }
+    
+    private long levelMax = 0;
+    private Map<String, Long> levelMap = new HashMap<>();
+    
+    public int widthOfBinaryTree1(TreeNode root) {
+        if(root == null) return 0;
+        
+        dfs(root, 1, 1);
+        
+        return (int)levelMax + 1;
+    }
+    
+    private void dfs(TreeNode node, long index, int level) {
+        if(node == null) return;
+        
+        Long min = levelMap.get("min" + level);
+        min = min == null ? index : (min > index ? index : min);
+        levelMap.put("min" + level, min);
+        
+        Long max = levelMap.get("max" + level);
+        max = max == null ? index : (max < index ? index : max);
+        levelMap.put("max" + level, max);
+        
+        levelMax = levelMax < (max - min) ? (max - min) : levelMax;
+        
+        dfs(node.left, index * 2, level + 1);
+        dfs(node.right, index * 2 + 1, level + 1);
     }
     
     private void levelTravel(List<TreeNode> treeNodes) {
