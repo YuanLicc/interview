@@ -35,6 +35,33 @@ public class TreeToDoublyList {
         return head;
     }
     
+    public NodeD treeToDoublyList1(NodeD root) {
+        if(root == null) return root;
+        dfs(root);
+        head.left = pre;
+        pre.right = head;
+        
+        return head;
+    }
+    
+    NodeD head = null;
+    NodeD pre = null;
+    
+    private void dfs(NodeD node) {
+        if(node == null) return;
+        
+        dfs(node.left);
+        
+        if(head == null) {
+            head = node;
+            pre = node;
+        }
+        else pre.right = node;
+        node.left = pre;
+        pre = node;
+        dfs(node.right);
+    }
+    
     private void dfs(NodeD node, List<NodeD> list) {
         if(node == null) return;
         
