@@ -38,4 +38,12 @@ public class BSTLowestCommonAncestor {
         return num;
     }
 
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null || p == null || q == null) return null;
+
+        if(root.val > p.val && root.val > q.val) return lowestCommonAncestor1(root.left, p, q);
+        if(root.val < q.val && root.val < p.val) return lowestCommonAncestor1(root.right, p, q);
+        return root;
+    }
+
 }
