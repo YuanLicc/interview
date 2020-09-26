@@ -26,36 +26,45 @@ public class ReverseKGroup extends TestCase {
         ListNode rsH = null;
         ListNode rsT = null;
         while (p != null) {
-            if(!isK(p, k)) {
-                if(rsH == null) return head;
+            ListNode[] ht = new ListNode[2];
+            if(reverse(p, k, ht) > 1) {
+                reverse(ht[0], k, ht);
+                if(rsH == null) return ht[0];
                 else {
-                    rsT.next = p;
+                    rsT.next = ht[0];
                     return rsH;
                 }
             }
-            ListNode next = p.next;
-            p.next = null;
-            ListNode h = p;
-            ListNode t = p;
-            p = next;
-            int num = k;
-            while (p != null && num > 1) {
-                next = p.next;
-                p.next = h;
-                h = p;
-                p = next;
-                num--;
-            }
             if(rsH == null) {
-                rsH = h;
-                rsT = t;
+                rsH = ht[0];
+                rsT = ht[1];
             }
             else {
-                rsT.next = h;
-                rsT = t;
+                rsT.next = ht[0];
+                rsT = ht[1];
             }
+            p = ht[1].next;
         }
         return rsH;
+    }
+
+    private int reverse(ListNode node, int k, ListNode[] ht) {
+        ListNode next = node.next;
+        node.next = null;
+        ListNode h = node;
+        ListNode t = node;
+        node = next;
+        while (node != null && k > 1) {
+            next = node.next;
+            node.next = h;
+            h = node;
+            node = next;
+            k--;
+        }
+        t.next = node;
+        ht[0] = h;
+        ht[1] = t;
+        return k;
     }
 
     private boolean isK(ListNode node, int n) {
