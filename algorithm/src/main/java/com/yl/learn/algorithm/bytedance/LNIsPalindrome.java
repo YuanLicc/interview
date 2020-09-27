@@ -2,6 +2,8 @@ package com.yl.learn.algorithm.bytedance;
 
 import com.yl.learn.algorithm.ListNode;
 
+import java.util.Stack;
+
 /**
  * 请判断一个链表是否为回文链表。
  *
@@ -33,6 +35,20 @@ public class LNIsPalindrome {
         if(!dfs(head.next)) return false;
         if(head.val != h.val) return false;
         h = h.next;
+        return true;
+    }
+
+    public boolean isPalindromeStack(ListNode head) {
+        ListNode p = head;
+        Stack<Integer> stack = new Stack<>();
+        while (p != null) {
+            stack.push(p.val);
+            p = p.next;
+        }
+        p = head;
+        while (p != null) {
+            if(p.val != stack.pop()) return false;
+        }
         return true;
     }
 }
