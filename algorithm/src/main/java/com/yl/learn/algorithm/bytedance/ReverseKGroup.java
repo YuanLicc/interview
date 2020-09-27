@@ -49,20 +49,18 @@ public class ReverseKGroup extends TestCase {
     }
 
     private int reverse(ListNode node, int k, ListNode[] ht) {
-        ListNode next = node.next;
-        node.next = null;
-        ListNode h = node;
+        ListNode pre = node;
         ListNode t = node;
-        node = next;
+        node = node.next;
         while (node != null && k > 1) {
-            next = node.next;
-            node.next = h;
-            h = node;
+            ListNode next = node.next;
+            node.next = pre;
+            pre = node;
             node = next;
             k--;
         }
         t.next = node;
-        ht[0] = h;
+        ht[0] = pre;
         ht[1] = t;
         return k;
     }
