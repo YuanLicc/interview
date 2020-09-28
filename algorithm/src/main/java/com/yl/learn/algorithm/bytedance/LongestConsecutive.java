@@ -26,13 +26,14 @@ public class LongestConsecutive extends TestCase {
         int max = 0;
         Map<Integer, Integer> map = new HashMap<>(nums.length);
         for(int i = 0; i < nums.length; i++) {
+            if(map.get(nums[i]) != null) continue;
             Integer left = map.get(nums[i] - 1);
             Integer right = map.get(nums[i] + 1);
             int cur = (left == null ? 0 : left) + (right == null ? 0 : right) + 1;
             map.put(nums[i], cur);
-            if(left != null) map.put(nums[i] - 1, cur);
-            if(right != null) map.put(nums[i] + 1, cur);
-            max = max > cur ? max :cur;
+            if(left != null && map.get(nums[i] - left) != null) map.put(nums[i] - left, cur);
+            if(right != null && map.get(nums[i] + right) != null) map.put(nums[i] + right, cur);
+            max = max > cur ? max : cur;
         }
         return max;
     }
