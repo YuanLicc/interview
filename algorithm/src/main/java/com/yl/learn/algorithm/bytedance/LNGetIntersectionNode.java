@@ -17,6 +17,17 @@ public class LNGetIntersectionNode {
         return rs;
     }
     
+    public ListNode getIntersectionNodeCycle(ListNode headA, ListNode headB) {
+        if(headA == headB) return headA;
+        ListNode A = headA;
+        ListNode B = headB;
+        while(A != B) {
+            A = A == null ? headB : A.next;
+            B = B == null ? headA : B.next;
+        }
+        return A;
+    }
+    
     private Stack<ListNode> dfs(ListNode node) {
         Stack<ListNode> stack = new Stack<>();
         while (node != null) {
