@@ -25,8 +25,23 @@ import java.util.Map;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class FirstMissingPositive extends TestCase {
-    
+
     public int firstMissingPositive(int[] nums) {
+        for(int i = 0; i < nums.length; i++) {
+            while (nums[i] > 0 && nums[i] <= nums.length && nums[i] != i + 1 && nums[nums[i] - 1] != nums[i]) {
+                int temp = nums[i];
+                int index = nums[i] - 1;
+                nums[i] = nums[index];
+                nums[index] = temp;
+            }
+        }
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] != i + 1) return i + 1;
+        }
+        return nums.length + 1;
+    }
+
+    public int firstMissingPositiveMap(int[] nums) {
         int min = Integer.MAX_VALUE;
         int max = 0;
         Map<Integer, Integer> map = new HashMap<>();
