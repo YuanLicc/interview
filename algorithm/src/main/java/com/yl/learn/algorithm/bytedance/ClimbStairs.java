@@ -43,7 +43,7 @@ public class ClimbStairs extends TestCase {
             cur = sum;
             num++;
         }
-        return cur + pre
+        return cur + pre;
     }
     
     private int climbStairs(int n, int[] cache) {
