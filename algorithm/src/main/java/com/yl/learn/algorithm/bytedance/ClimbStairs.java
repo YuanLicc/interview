@@ -32,6 +32,20 @@ public class ClimbStairs extends TestCase {
         return climbStairs(n, cache);
     }
     
+    public int climbStairs1(int n) {
+        if(n == 1 || n == 2) return n;
+        int pre = 1;
+        int cur = 2;
+        int num = 3;
+        while (num != n) {
+            int sum = pre + cur;
+            pre = cur;
+            cur = sum;
+            num++;
+        }
+        return cur + pre
+    }
+    
     private int climbStairs(int n, int[] cache) {
         if(cache[n - 1] != 0) return cache[n - 1];
         return climbStairs(n - 1, cache) + climbStairs(n - 2, cache);
