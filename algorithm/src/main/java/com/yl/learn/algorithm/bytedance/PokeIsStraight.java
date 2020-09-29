@@ -3,6 +3,8 @@ package com.yl.learn.algorithm.bytedance;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的。
@@ -20,6 +22,20 @@ import java.util.Arrays;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class PokeIsStraight extends TestCase {
+    
+    public boolean isStraightMap(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int min = 14;
+        int max = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == 0) continue;;
+            if(map.containsKey(nums[i])) return false;
+            map.put(nums[i], 0);
+            min = min < nums[i] ? min : nums[i];
+            max = max > nums[i] ? max : nums[i];
+        }
+        return max - min < 5;
+    }
     
     public boolean isStraight(int[] nums) {
         Arrays.sort(nums);
