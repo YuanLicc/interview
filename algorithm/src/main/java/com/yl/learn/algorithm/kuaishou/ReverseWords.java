@@ -1,5 +1,9 @@
 package com.yl.learn.algorithm.kuaishou;
 
+import junit.framework.TestCase;
+
+import java.util.Stack;
+
 /**
  * 给定一个字符串，逐个翻转字符串中的每个单词。
  *
@@ -18,7 +22,24 @@ package com.yl.learn.algorithm.kuaishou;
  * 链接：https://leetcode-cn.com/problems/reverse-words-in-a-string
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class ReverseWords {
+public class ReverseWords extends TestCase {
+    
+    public String reverseWordsStack(String s) {
+        Stack<String> stack = new Stack<>();
+        String[] ss = s.split(" ");
+        for(int i = 0; i < ss.length; i++) {
+            if(!ss[i].equals("")) stack.push(ss[i]);
+        }
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop()).append(' ');
+        }
+        return sb.toString().substring(0, sb.length() - 1);
+    }
+    
+    public void test() {
+        reverseWordsStack(" asc csdc  csdc");
+    }
     
     public String reverseWords(String s) {
         s = s.trim();
