@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class MapCanFinish {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        boolean[][] graph = new boolean[numCourses][numCourses];
+        int[][] graph = new int[numCourses][numCourses];
         build(graph, prerequisites);
         // 判断是否有环
         for(int i = 0; i < graph.length; i++) {
@@ -28,23 +28,24 @@ public class MapCanFinish {
         return true;
     }
 
-    private boolean dfs(boolean[][] graph, int course, boolean[] viewed) {
+    private boolean dfs(int[][] graph, int course, boolean[] viewed) {
         if(viewed[course]) {
             return false;
         }
         for(int i = 0; i < graph[course].length; i++) {
-            if(graph[course][i]) {
+            if(graph[course][i] == 1) {
                 boolean[] copied = Arrays.copyOf(viewed, viewed.length);
                 copied[course] = true;
                 if(!dfs(graph, i, copied)) return false;
+                graph[course][i] = -1;
             }
         }
         return true;
     }
 
-    private void build(boolean[][] graph, int[][] prerequisites) {
+    private void build(int[][] graph, int[][] prerequisites) {
         for(int i = 0; i < prerequisites.length; i++) {
-            graph[prerequisites[i][1]][prerequisites[i][0]] = true;
+            graph[prerequisites[i][1]][prerequisites[i][0]] = 1;
         }
     }
 
