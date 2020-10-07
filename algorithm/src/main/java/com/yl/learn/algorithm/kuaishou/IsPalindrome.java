@@ -36,6 +36,26 @@ public class IsPalindrome {
         return true;
     }
 
+    public boolean isPalindromeReverse(int x) {
+        if(x < 0) return false;
+        int r = reverse(x);
+        while (x > 0) {
+            if(x % 10 != r % 10) return false;
+            x = x / 10;
+            r = r / 10;
+        }
+        return true;
+    }
+
+    private int reverse(int x) {
+        int rs = 0;
+        while (x > 0) {
+            rs = rs * 10 + (x % 10);
+            x = x / 10;
+        }
+        return rs;
+    }
+
     private int get(int x, int wei) {
         return (int) (x / Math.pow(10, wei - 1)) % 10;
     }
