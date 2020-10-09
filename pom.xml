@@ -22,6 +22,7 @@
         <module>hadoop</module>
         <module>dw</module>
         <module>util</module>
+        <module>source</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
