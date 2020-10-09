@@ -18,6 +18,10 @@ package com.yl.learn.algorithm.alibaba;
  */
 public class RepeatedSubstringPattern {
 
+    public boolean repeatedSubstringPattern1(String s) {
+        return (s + s).substring(1, s.length() * 2 - 1).contains(s);
+    }
+
     public boolean repeatedSubstringPattern(String s) {
         if(s == null || s.length() <= 1) return false;
         for(int i = 1; i <= s.length() / 2; i++) {
