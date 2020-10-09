@@ -3,6 +3,8 @@ package com.yl.learn.array;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
@@ -17,6 +19,10 @@ public class ArrayTest extends TestCase {
 
         Arrays.parallelPrefix(array, Integer::sum);
         System.out.println(array);
-
+    
+    }
+    
+    public void test() {
+        Map<String, Integer> map = new HashMap<>();
     }
 }
