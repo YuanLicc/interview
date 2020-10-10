@@ -21,13 +21,34 @@ import java.util.Map;
  */
 public class MissingNumber {
     
-    public int missingNumber(int[] nums) {
+    public int missingNumberMap(int[] nums) {
         Map<Integer, Boolean> map = new HashMap<>(nums.length);
         for(int i = 0; i < nums.length; i++) map.put(nums[i], false);
         for(int i = 0; i <= nums.length; i++) {
             if(map.get(i) == null) return i;
         }
         return -1;
+    }
+    // 3,0,1
+    public int missingNumber(int[] nums) {
+        int zeroIndex = -1;
+        for(int i = 0; i < nums.length; i++) {
+            if(i + 1 == nums[i]) continue;
+            if(nums[i] == 0) zeroIndex = i;
+            else {
+                while (i + 1 != nums[i]) {
+                    int temp = nums[i];
+                    nums[i] = nums[nums[i] - 1];
+                    nums[temp - 1] = temp;
+                    if(nums[i] == 0) {
+                        zeroIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+        if(zeroIndex == -1) return 0;
+        return zeroIndex + 1;
     }
     
 }
