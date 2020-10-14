@@ -3,6 +3,19 @@ package com.yl.learn;
 import junit.framework.TestCase;
 
 public class InitTest extends TestCase {
+
+    public void testInvokeStaticField4() {
+        Init.a = 1;
+    }
+
+    public void testInvokeStaticField2() {
+        System.out.println(Init.A1);
+    }
+
+    // 引用静态变量时触发初始化
+    public void testInvokeStaticField1() {
+        int a = Init.b + 1;
+    }
     
     // 引用静态变量时触发初始化
     public void testInvokeStaticField() {
