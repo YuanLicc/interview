@@ -146,6 +146,14 @@ public class PrintUtil {
         }
         PrintUtil.println();
     }
+
+    public static void printlnArray(boolean[] array) {
+        if(array == null) return;
+        for (int i = 0; i < array.length; i++) {
+            PrintUtil.print(array[i], "", i == array.length - 1 ? "" : ", ");
+        }
+        PrintUtil.println();
+    }
     
     public static <T> void printlnArray(T[][] array) {
         if(array == null) return;
@@ -156,6 +164,14 @@ public class PrintUtil {
     }
     
     public static void printlnArray(int[][] array) {
+        if(array == null) return;
+        for (int i = 0; i < array.length; i++) {
+            printlnArray(array[i]);
+        }
+        PrintUtil.println();
+    }
+
+    public static void printlnArray(boolean[][] array) {
         if(array == null) return;
         for (int i = 0; i < array.length; i++) {
             printlnArray(array[i]);
