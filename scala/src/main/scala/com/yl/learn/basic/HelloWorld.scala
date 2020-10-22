@@ -1,5 +1,9 @@
 package com.yl.learn.basic
 
-class HelloWorld {
+object HelloWorld {
+
+  def main(args : Array[String]) : Unit = {
+      println("Hello World!");
+  }
 
 }

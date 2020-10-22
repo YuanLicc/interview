@@ -23,6 +23,7 @@
         <module>dw</module>
         <module>util</module>
         <module>source</module>
+        <module>scala</module>
     </modules>
     <name>interview</name>
     <url>http://maven.apache.org</url>
