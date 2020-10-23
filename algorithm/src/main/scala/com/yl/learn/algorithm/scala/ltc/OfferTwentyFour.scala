@@ -6,16 +6,12 @@ object OfferTwentyFour {
 
     def reverse(head : ListNode) : ListNode = {
         if(Option(head).isEmpty) return head
-        var pre = head
-        var p = head.next
+        var pre = head; var p = head.next
         pre.next = null
         while (Option(p).isDefined) {
-            val pN = p.next
-            p.next = pre
-            pre = p
-            p = pN
-        }
-        pre
+            val pN = p.next; p.next = pre
+            pre = p; p = pN
+        } ; pre
     }
 
     def main(args : Array[String]) : Unit = {
