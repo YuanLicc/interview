@@ -10,11 +10,8 @@ public class Reverse {
 
     public static String reverse(String src) {
         if(src == null) return null;
-
         int length = src.length();
-
         if(length == 0) return src;
-
         char[] chars = src.toCharArray();
 
         for (int i = ((length - 1) >> 1); i >= 0; i--) {
