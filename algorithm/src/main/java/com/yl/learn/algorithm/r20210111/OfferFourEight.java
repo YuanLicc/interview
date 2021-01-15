@@ -12,28 +12,28 @@ public class OfferFourEight extends TestCase {
         
         int max = 0;
         int len = 0;
-        for (int i = 0; i < s.length(); ) {
+        int index = 0;
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             Integer get = ci.get(c);
             
-            if(get == null) {
+            if(get == null || get < index) {
                 ci.put(c, i);
                 len++;
-                i++;
                 continue;
             }
             
             max = max > len ? max : len;
-            len = 0;
-            ci = new HashMap<>();
-            i = get + 1;
+            len = i - get;
+            ci.put(c, i);
+            index = get;
         }
         
         return len > max ? len : max;
     }
     
     public void test() {
-        System.out.println(lengthOfLongestSubstring("dvdf"));
+        System.out.println(lengthOfLongestSubstring("123123412345"));
     }
     
 }
