@@ -22,7 +22,7 @@ public class MaxSumOfTriangleTest extends TestSuper {
             Arrays.asList(caseA).stream().forEach((item) -> {
                 PrintUtil.println(Arrays.toString(item));
             });
-
+    
             PrintUtil.println(MaxSumOfTriangle.maxSum(caseA), "Result:\n", "");
         });
     }

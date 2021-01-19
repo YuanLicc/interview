@@ -2,6 +2,7 @@ package com.yl.learn.dp.proxy.impl;
 
 import com.yl.learn.dp.proxy.AfterInvokeHandler;
 import com.yl.learn.dp.proxy.DynamicProxy;
+import com.yl.learn.util.util.PrintUtil;
 
 /**
  * 打印对象代理
@@ -15,6 +16,6 @@ public class PrintObjectChangeProxy extends DynamicProxy {
 
     @Override
     public void preInvoke() {
-        System.out.println(proxied);
+        PrintUtil.println(proxied);
     }
 }

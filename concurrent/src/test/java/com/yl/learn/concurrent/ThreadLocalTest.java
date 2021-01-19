@@ -1,6 +1,7 @@
 package com.yl.learn.concurrent;
 
 import com.yl.learn.concurrent.util.ThreadUtils;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class ThreadLocalTest extends TestCase {
@@ -10,6 +11,6 @@ public class ThreadLocalTest extends TestCase {
 
         ThreadUtils.sleepSecond(1);
 
-        System.out.println(timer.end());
+        PrintUtil.println(timer.end());
     }
 }

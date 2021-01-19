@@ -56,7 +56,7 @@ public static void main(String[] args) {
             @Override
             public void run() {
                 for (int i = 0; i < vector.size(); i++) {
-                    System.out.println(vector.get(i));
+                    PrintUtil.println(vector.get(i));
                 }
             }
         });
@@ -89,7 +89,7 @@ Thread removeThread = new Thread(new Runnable() {
             public void run() {
                 synchronized (vector) {
                     for (int i = 0; i < vector.size(); i++) {
-                    	System.out.println(vector.get(i));
+                    	PrintUtil.println(vector.get(i));
                 	}
                 }
             }

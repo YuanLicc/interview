@@ -1,6 +1,7 @@
 package com.yl.learn.concurrent;
 
 import com.yl.learn.concurrent.util.ThreadUtils;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class SafeShutdownThread extends TestCase {
@@ -15,7 +16,7 @@ public class SafeShutdownThread extends TestCase {
                 && on) {
                 count++;
             }
-            System.out.println("count: " + count + " Thread id: " + Thread.currentThread().getId());
+            PrintUtil.println("count: " + count + " Thread id: " + Thread.currentThread().getId());
         }
 
         public void cancel() {

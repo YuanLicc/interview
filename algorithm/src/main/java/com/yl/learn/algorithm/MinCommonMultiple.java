@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm;
 
+import com.yl.learn.util.util.PrintUtil;
+
 /**
  * 最小公倍数
  */
@@ -21,6 +23,6 @@ public class MinCommonMultiple {
 
     public static void main(String[] args) {
 
-        System.out.println(min(20, 5));
+        PrintUtil.println(min(20, 5));
     }
 }

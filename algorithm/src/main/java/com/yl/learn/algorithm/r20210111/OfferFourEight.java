@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.HashMap;
@@ -33,7 +34,7 @@ public class OfferFourEight extends TestCase {
     }
     
     public void test() {
-        System.out.println(lengthOfLongestSubstring("123123412345"));
+        PrintUtil.println(lengthOfLongestSubstring("123123412345"));
     }
     
 }

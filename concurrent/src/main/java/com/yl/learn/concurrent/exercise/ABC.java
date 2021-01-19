@@ -1,5 +1,7 @@
 package com.yl.learn.concurrent.exercise;
 
+import com.yl.learn.util.util.PrintUtil;
+
 public class ABC {
 
     public static void main(String[] args) throws InterruptedException{
@@ -37,7 +39,7 @@ public class ABC {
             while(count > 0) {
                 synchronized (preLock) {
                     synchronized (selfLock) {
-                        System.out.println(print);
+                        PrintUtil.println(print);
                         count--;
 
                         selfLock.notifyAll();

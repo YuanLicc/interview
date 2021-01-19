@@ -97,9 +97,9 @@ public List<T> toList(T[] array) {
  * <p>
  * Here are some more examples of how strings can be used:
  * <blockquote><pre>
- *     System.out.println("abc");
+ *     PrintUtil.println("abc");
  *     String cde = "cde";
- *     System.out.println("abc" + cde);
+ *     PrintUtil.println("abc" + cde);
  *     String c = "abc".substring(2,3);
  *     String d = cde.substring(1, 2);
  * </pre></blockquote>

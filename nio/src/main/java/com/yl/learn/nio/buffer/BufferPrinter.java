@@ -13,13 +13,13 @@ public class BufferPrinter {
             return;
         }
 
-        PrintUtil.print(prefix);
+        PrintUtil.println(prefix);
 
         while (byteBuffer.hasRemaining()) {
-            PrintUtil.print(byteBuffer.get());
+            PrintUtil.println(byteBuffer.get());
         }
 
-        PrintUtil.print(suffix);
+        PrintUtil.println(suffix);
     }
 
     public static void println(ByteBuffer byteBuffer, String prefix, String suffix) {
@@ -33,13 +33,13 @@ public class BufferPrinter {
             return;
         }
 
-        PrintUtil.print(prefix);
+        PrintUtil.println(prefix);
 
         while (charBuffer.hasRemaining()) {
-            PrintUtil.print(charBuffer.get() + delimiter);
+            PrintUtil.println(charBuffer.get() + delimiter);
         }
 
-        PrintUtil.print(suffix);
+        PrintUtil.println(suffix);
     }
 
     public static void println(CharBuffer charBuffer, String prefix, String delimiter, String suffix) {

@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.yy;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +22,7 @@ public class Main {
         	return;
         }
         
-        System.out.println(isContains(text, aim));
+        PrintUtil.println(isContains(text, aim));
     }
     
     public static boolean isContains(String text, String aim) {

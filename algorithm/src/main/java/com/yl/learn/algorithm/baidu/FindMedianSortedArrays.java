@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.baidu;
 
+import com.yl.learn.util.util.PrintUtil;
+
 public class FindMedianSortedArrays {
     
     public static double findMedianSortedArray(int[] arrayA, int[] arrayB) {
@@ -58,7 +60,7 @@ public class FindMedianSortedArrays {
     public static void main(String[] args) {
         int[] arrayB = new int[]{1,2};
         int[] arrayA = new int[]{3,4};
-        System.out.println(findMedianSortedArray(arrayA, arrayB));
+        PrintUtil.println(findMedianSortedArray(arrayA, arrayB));
     }
     
 }

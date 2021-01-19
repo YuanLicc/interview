@@ -1,5 +1,7 @@
 package com.yl.learn.nio;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -37,7 +39,7 @@ public class ChannelTest {
         }
         channel.close();
         fileInputStream.close();
-        System.out.println();
+        PrintUtil.println();
     }
 
 
@@ -61,7 +63,7 @@ public class ChannelTest {
 
         channel.close();
         fileInputStream.close();
-        System.out.println();
+        PrintUtil.println();
     }
 
 }

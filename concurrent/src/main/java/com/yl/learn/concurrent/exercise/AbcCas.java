@@ -1,5 +1,6 @@
 package com.yl.learn.concurrent.exercise;
 
+import com.yl.learn.util.util.PrintUtil;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -25,20 +26,20 @@ public class AbcCas {
         while(!unsafe.compareAndSwapInt(this, stateOffset, 0, 1)) {
             //sleep
         }
-        System.out.println(1);
+        PrintUtil.println(1);
     }
 
     public void second() {
         while(!unsafe.compareAndSwapInt(this, stateOffset, 1, 2)) {
             //sleep
         }
-        System.out.println(2);
+        PrintUtil.println(2);
     }
 
     public void third() {
         while(!unsafe.compareAndSwapInt(this, stateOffset, 2, 0)) {
             //sleep
         }
-        System.out.println(3);
+        PrintUtil.println(3);
     }
 }

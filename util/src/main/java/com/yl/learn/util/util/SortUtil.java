@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 import java.util.ArrayList;
 
-public class SortUtil extends TestCase {
+public class SortUtil {
     
     /**
      * O(nlogn) - O(n^2)
@@ -165,38 +165,6 @@ public class SortUtil extends TestCase {
         for(int i = leftStart; i <= rightEnd; i++) {
             array[i] = tmpList.get(i - leftStart);
         }
-    }
-    
-    public void testQuickSort() {
-        Integer[] arr = new Integer[]{1, -1, -2, 10, 11, 33};
-        PrintUtil.printlnArray(arr);
-        quickSort(arr);
-        PrintUtil.printlnArray(arr);
-    }
-    
-    public void testMergeSort() {
-        Integer[] arr = new Integer[]{1, -1, -2, 10, 11, 33};
-        PrintUtil.printlnArray(arr);
-        mergeSort(arr);
-        PrintUtil.printlnArray(arr);
-    }
-
-    public void testBubbleSort() {
-        Integer[] arr = new Integer[]{1, -1, 20, 10, 11, 33};
-        bubbleSort(arr);
-        PrintUtil.printlnArray(arr);
-    }
-
-    public void testInsertSort() {
-        Integer[] arr = new Integer[]{1, -1, -2, 10, 11, 33};
-        insertSort(arr);
-        PrintUtil.printlnArray(arr);
-    }
-    
-    public void testSelectSort() {
-        Integer[] arr = new Integer[]{1, -1, 20, 10, 11, 33};
-        selectSort(arr);
-        PrintUtil.printlnArray(arr);
     }
     
 }

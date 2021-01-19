@@ -16,7 +16,7 @@ public class Main {
             return;
         }
 
-        System.out.println(max(a, b));
+        PrintUtil.println(max(a, b));
     }
 
     private static int max(int a, int b) {

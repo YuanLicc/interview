@@ -1,5 +1,6 @@
 package com.yl.learn.lambda;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.Date;
@@ -11,6 +12,6 @@ public class ThreadLocalTest extends TestCase {
             return new Date();
         });
 
-        System.out.println(local.get());
+        PrintUtil.println(local.get());
     }
 }

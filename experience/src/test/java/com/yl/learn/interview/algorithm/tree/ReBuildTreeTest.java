@@ -20,7 +20,7 @@ public class ReBuildTreeTest extends TestCase {
 
         PrintUtil.printlnLine();
         tree.breadthFirstTravel(treeNode -> {
-            PrintUtil.print(treeNode.value);
+            PrintUtil.println(treeNode.value);
         });
         PrintUtil.printlnLine();
 
@@ -28,7 +28,7 @@ public class ReBuildTreeTest extends TestCase {
 
         PrintUtil.printlnLine();
         tree.inTravelRecursion(node -> {
-            PrintUtil.print(node.value);
+            PrintUtil.println(node.value);
         });
         PrintUtil.printlnLine();
 
@@ -36,7 +36,7 @@ public class ReBuildTreeTest extends TestCase {
 
         PrintUtil.printlnLine();
         tree.inTravelWhile(node -> {
-            PrintUtil.print(node.value);
+            PrintUtil.println(node.value);
         });
         PrintUtil.printlnLine();
 
@@ -44,7 +44,7 @@ public class ReBuildTreeTest extends TestCase {
 
         PrintUtil.printlnLine();
         tree.preTravelRecursion(node -> {
-            PrintUtil.print(node.value);
+            PrintUtil.println(node.value);
         });
 
         PrintUtil.printlnLine();
@@ -53,7 +53,7 @@ public class ReBuildTreeTest extends TestCase {
 
         PrintUtil.printlnLine();
         tree.preTravelWhile(node -> {
-            PrintUtil.print(node.value);
+            PrintUtil.println(node.value);
         });
 
         PrintUtil.println(tree.postTravelListRecursion());
@@ -61,7 +61,7 @@ public class ReBuildTreeTest extends TestCase {
         PrintUtil.printlnLine();
 
         tree.postTravelRecursion(node -> {
-            PrintUtil.print(node.value);
+            PrintUtil.println(node.value);
         });
     }
 }

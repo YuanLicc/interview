@@ -1,5 +1,6 @@
 package com.yl.learn.map;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.HashMap;
@@ -11,14 +12,14 @@ public class MapTest extends TestCase {
         map.put("a", 1);
 
         Integer c = map.computeIfAbsent("c", (key) -> key.hashCode() * -1);
-        System.out.println(c);
+        PrintUtil.println(c);
 
         Integer d = map.compute("a", (key, value) -> key.hashCode() + value);
-        System.out.println(d);
+        PrintUtil.println(d);
 
         map.forEach(
                 (key, value) -> {
-                    System.out.println(key + ":" + value);
+                    PrintUtil.println(key + ":" + value);
                 }
         );
     }

@@ -1,26 +1,27 @@
 package com.yl.learn.lambda;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class PrintableTest extends TestCase {
 
     public void testPrintable() {
-        Printable printable = () -> System.out.println("aaa");
+        Printable printable = () -> PrintUtil.println("aaa");
         printable.print();
 
-        PrintableOneParam printableOneParam = arg -> System.out.println(arg);
+        PrintableOneParam printableOneParam = arg -> PrintUtil.println(arg);
         printableOneParam.print("aaaa");
 
         PrintableOneParam printableOneParam1 = arg -> {
-            System.out.println("one line");
-            System.out.println(arg);
+            PrintUtil.println("one line");
+            PrintUtil.println(arg);
         };
 
         String name = "ccc";
 
         PrintableMultiParams printableMultiParams = (arg, isPrint) -> {
             if(isPrint) {
-                System.out.println(arg + name);
+                PrintUtil.println(arg + name);
             }
         };
 

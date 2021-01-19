@@ -44,7 +44,7 @@ public void testIterator() {
     items.add(2);
     items.add(2);
 
-    System.out.println(items.stream()
+    PrintUtil.println(items.stream()
         .filter(item -> item == 2)
         .count()
     );
@@ -76,7 +76,7 @@ items.stream()
 ```java
 items.stream()
     .filter(item -> {
-        System.out.println(item);
+        PrintUtil.println(item);
         return item == 2
     });
 ```
@@ -135,7 +135,7 @@ long count = Stream.of(items, items1)
 Integer min = items.stream()
     .max(Comparator.comparing(item -> item * -1))
     .get();
-System.out.println(min);
+PrintUtil.println(min);
 ```
 
 #### 6）reduce

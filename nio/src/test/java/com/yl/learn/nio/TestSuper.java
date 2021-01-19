@@ -18,8 +18,8 @@ public class TestSuper {
 
     @After
     public void testEnd() {
-        PrintUtil.println(System.nanoTime() - time, "Elapsed Time: ", " ns");
-        PrintUtil.println(System.currentTimeMillis() - mTime, "Elapsed Time: ", " ms");
+        PrintUtil.print(System.nanoTime() - time, "Elapsed Time: ", " ns");
+        PrintUtil.print(System.currentTimeMillis() - mTime, "Elapsed Time: ", " ms");
     }
 
 }

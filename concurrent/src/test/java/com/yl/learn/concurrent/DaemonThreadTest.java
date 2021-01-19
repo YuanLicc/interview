@@ -1,6 +1,7 @@
 package com.yl.learn.concurrent;
 
 import com.yl.learn.concurrent.util.ThreadUtils;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class DaemonThreadTest extends TestCase {
@@ -12,7 +13,7 @@ public class DaemonThreadTest extends TestCase {
                 ThreadUtils.sleepSecond(100);
             }
             finally {
-                System.out.println("FinallyRunnable finally block");
+                PrintUtil.println("FinallyRunnable finally block");
             }
         }
     }

@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.jd;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +26,7 @@ public class Main {
                 input.nextLine();
             }
 
-            System.out.println(check(m, M, N));
+            PrintUtil.println(check(m, M, N));
         }
 
     }

@@ -1,5 +1,6 @@
 package com.yl.learn;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class InitTest extends TestCase {
@@ -9,7 +10,7 @@ public class InitTest extends TestCase {
     }
 
     public void testInvokeStaticField2() {
-        System.out.println(Init.A1);
+        PrintUtil.println(Init.A1);
     }
 
     // 引用静态变量时触发初始化

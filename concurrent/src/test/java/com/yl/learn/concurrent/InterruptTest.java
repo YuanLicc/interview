@@ -1,5 +1,6 @@
 package com.yl.learn.concurrent;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class InterruptTest extends TestCase {
@@ -7,7 +8,7 @@ public class InterruptTest extends TestCase {
     public void testStop() {
         Thread t1 = new Thread(() -> {
             while(true) {
-                System.out.println(1);
+                PrintUtil.println(1);
             }
         });
         t1.start();
@@ -20,7 +21,7 @@ public class InterruptTest extends TestCase {
 
         public void run() {
             while(isStop) {
-                System.out.println(1);
+                PrintUtil.println(1);
             }
         }
 

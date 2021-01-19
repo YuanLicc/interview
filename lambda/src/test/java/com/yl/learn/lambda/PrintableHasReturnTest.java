@@ -1,5 +1,6 @@
 package com.yl.learn.lambda;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class PrintableHasReturnTest extends TestCase {
@@ -9,7 +10,7 @@ public class PrintableHasReturnTest extends TestCase {
         };
 
         PrintableHasReturn printableHasReturn1 = printed -> ("".equals(printed)) + "";
-        System.out.println(printableHasReturn1.print("aaa"));
+        PrintUtil.println(printableHasReturn1.print("aaa"));
 
     }
 }

@@ -1,5 +1,6 @@
 package com.yl.learn.concurrent;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.concurrent.CountDownLatch;
@@ -21,6 +22,6 @@ public class AtomicTest extends TestCase {
             }.start();
         }
         countDownLatch.await();
-        System.out.println(cnt.get());
+        PrintUtil.println(cnt.get());
     }
 }

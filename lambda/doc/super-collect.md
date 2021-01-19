@@ -133,7 +133,7 @@ Map<String, Integer> map = new HashMap<>();
 map.put("a", 1);
 
 Integer c = map.computeIfAbsent("c", (key) -> key.hashCode() * -1);
-System.out.println(c);
+PrintUtil.println(c);
 ```
 
 compute方法：若值存在则使用Lambda表达式计算新值：
@@ -147,7 +147,7 @@ forEach方法：
 ```java
 map.forEach(
     (key, value) -> {
-        System.out.println(key + ":" + value);
+        PrintUtil.println(key + ":" + value);
     }
 );
 ```

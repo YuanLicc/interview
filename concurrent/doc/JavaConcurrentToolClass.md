@@ -23,7 +23,7 @@ public void testCountDownLatch() throws Exception {
         new Thread(new CountdownRunnable(countDownLatch), i +" thread").start();
     }
     countDownLatch.await();
-    System.out.println("OK");
+    PrintUtil.println("OK");
 }
 
 static class CountdownRunnable implements Runnable {
@@ -36,7 +36,7 @@ static class CountdownRunnable implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName());
+        PrintUtil.println(Thread.currentThread().getName());
         this.countDownLatch.countDown();
     }
 }
@@ -59,7 +59,7 @@ public void testCyclicBarrier() {
         new Thread(() -> {
             try {
                 cyclicBarrier.await();
-                System.out.println(Thread.currentThread().getName());
+                PrintUtil.println(Thread.currentThread().getName());
             }
             catch (Exception e) {
                 e.printStackTrace();

@@ -1,5 +1,6 @@
 package com.yl.learn.concurrent;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.concurrent.CyclicBarrier;
@@ -13,7 +14,7 @@ public class CyclicBarrierTest extends TestCase {
             new Thread(() -> {
                 try {
                     cyclicBarrier.await();
-                    System.out.println(Thread.currentThread().getName());
+                    PrintUtil.println(Thread.currentThread().getName());
                 }
                 catch (Exception e) {
                     e.printStackTrace();

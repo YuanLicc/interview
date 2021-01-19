@@ -93,8 +93,8 @@ public class AlgorithmArrayTest extends TestCase {
         int total = 0;
         for(int i = 0; i < 10; i++) {
             total = count++;
-            PrintUtil.print(count);
+            PrintUtil.println(count);
         }
-        PrintUtil.print(total);
+        PrintUtil.println(total);
     }
 }

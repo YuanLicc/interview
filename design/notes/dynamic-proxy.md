@@ -175,7 +175,7 @@ public class PrintObjectChangeProxy extends DynamicProxy {
 
     @Override
     public void preInvoke() {
-        System.out.println(proxied);
+        PrintUtil.println(proxied);
     }
 }
 ```
@@ -203,7 +203,7 @@ public class ProxyTest extends TestCase {
         new PrintObjectChangeProxy(personA, new AfterInvokeHandler() {
             @Override
             public void afterInvokeHandle(Object proxied, Object methodReturnObject) {
-                System.out.println(proxied.toString());
+                PrintUtil.println(proxied.toString());
             }
         }));
         person.trimName();

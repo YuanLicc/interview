@@ -87,7 +87,7 @@ add ((x) -> x + 1);
 ```java
 public interface Say {
     default void say() {
-        System.out.println("Hello");
+        PrintUtil.println("Hello");
     }
 }
 ```
@@ -98,7 +98,7 @@ public interface Say {
 public interface SayThank extends Say {
     @Override
     default void say() {
-        System.out.println("Thanks");
+        PrintUtil.println("Thanks");
     }
 }
 ```
@@ -184,12 +184,12 @@ empty.isPresent();
 ```java
 public void testOptional() {
     Optional<Integer> optionalInteger = Optional.empty();
-    System.out.println(optionalInteger.orElse(1));
-    System.out.println(optionalInteger.orElseGet(() -> 1));
+    PrintUtil.println(optionalInteger.orElse(1));
+    PrintUtil.println(optionalInteger.orElseGet(() -> 1));
 
     Optional<Integer> optionalInteger1 = Optional.of(21);
-    System.out.println(optionalInteger1.orElse(21));
-    System.out.println(optionalInteger1.orElseGet(() -> 1));
+    PrintUtil.println(optionalInteger1.orElse(21));
+    PrintUtil.println(optionalInteger1.orElseGet(() -> 1));
 }
 ```
 

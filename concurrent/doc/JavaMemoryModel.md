@@ -144,7 +144,7 @@ void write() {
 void validate() {
     if(mark) {
         int b = a * a;
-        system.out.println(b);
+        PrintUtil.println(b);
     }
 }
 ```
@@ -197,7 +197,7 @@ synchronized void write() {
 synchronized void validate() {
     if(mark) {
         int b = a * a;
-        system.out.println(b);
+        PrintUtil.println(b);
     }
 }
 ```

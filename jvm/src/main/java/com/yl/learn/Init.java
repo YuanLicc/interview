@@ -1,5 +1,7 @@
 package com.yl.learn;
 
+import com.yl.learn.util.util.PrintUtil;
+
 public class Init {
 
     public static int a;
@@ -10,10 +12,10 @@ public class Init {
 
     static {
         A = 123;
-        System.out.println("init");
+        PrintUtil.println("init");
     }
 
     public static void method() {
-        System.out.println();
+        PrintUtil.println();
     }
 }

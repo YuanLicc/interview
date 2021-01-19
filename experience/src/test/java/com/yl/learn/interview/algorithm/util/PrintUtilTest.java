@@ -9,24 +9,25 @@ public class PrintUtilTest extends TestCase {
 
     public void testPrintLine() {
 
-        String prefix = "start", suffix = "end";
+        String prefix = "start";
+        String suffix = "end";
         int column = 100, row = 2;
 
         Timer timer = Timer.start();
 
-        PrintUtil.printLine(prefix, suffix);
+        PrintUtil.printlnLine(prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printLine(column, row);
+        PrintUtil.printlnLine(column, row);
         PrintUtil.println();
 
-        PrintUtil.printLine(column, prefix, suffix);
+        PrintUtil.printlnLine(column, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printLine();
+        PrintUtil.printlnLine();
         PrintUtil.println();
 
-        PrintUtil.printLine(column);
+        PrintUtil.printlnLine(column);
         PrintUtil.println();
 
         PrintUtil.printlnLine(prefix, suffix);
@@ -44,19 +45,19 @@ public class PrintUtilTest extends TestCase {
         PrintUtil.printlnLine(column);
         PrintUtil.println();
 
-        PrintUtil.printLine(column, row, prefix, suffix);
+        PrintUtil.printlnLine(column, row, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printLine(-1, -1, prefix, suffix);
+        PrintUtil.printlnLine(-1, -1, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printLine(column, -1, prefix, suffix);
+        PrintUtil.printlnLine(column, -1, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printLine(-1, row, prefix, suffix);
+        PrintUtil.printlnLine(-1, row, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printLine(column, row, null, null);
+        PrintUtil.printlnLine(column, row, null, null);
         PrintUtil.println();
 
         PrintUtil.printlnLine(column);
@@ -65,22 +66,22 @@ public class PrintUtilTest extends TestCase {
         PrintUtil.printlnLine(column, 2, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.print(prefix, prefix, suffix);
+        PrintUtil.println(prefix, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.print(null, prefix, suffix);
+        PrintUtil.println(null, prefix, suffix);
         PrintUtil.println();
 
-        PrintUtil.printWithNaoTime(prefix, timer);
+        PrintUtil.printlnWithNaoTime(prefix, timer);
         PrintUtil.println();
 
-        PrintUtil.printWithNaoTime(prefix, null);
+        PrintUtil.printlnWithNaoTime(prefix, null);
         PrintUtil.println();
 
-        PrintUtil.printWithNaoTime(prefix, timer, prefix);
+        PrintUtil.printlnWithNaoTime(prefix, prefix, timer);
         PrintUtil.println();
 
-        PrintUtil.printWithNaoTime(prefix, timer, prefix, prefix, prefix);
+        PrintUtil.printlnWithNaoTime(prefix, timer, prefix, prefix, prefix);
         PrintUtil.println();
 
         PrintUtil.printlnWithNaoTime(prefix, timer);

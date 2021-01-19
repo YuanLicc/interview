@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 /**
@@ -48,7 +49,7 @@ public class TwoOneFive extends TestCase {
     }
     
     public void testA() {
-        System.out.println(findKthLargest(new int[]{1, 5, 2, 3, 20,-100}, 6));
+        PrintUtil.println(findKthLargest(new int[]{1, 5, 2, 3, 20,-100}, 6));
     }
 }
 

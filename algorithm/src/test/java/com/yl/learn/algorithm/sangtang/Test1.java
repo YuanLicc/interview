@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.sangtang;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class Test1 {
@@ -29,7 +31,7 @@ public class Test1 {
     private static void check(char[][][] plaints) {
 
         for(int i = 0; i < plaints.length; i++) {
-            System.out.println(check(plaints[i]));
+            PrintUtil.println(check(plaints[i]));
         }
 
     }

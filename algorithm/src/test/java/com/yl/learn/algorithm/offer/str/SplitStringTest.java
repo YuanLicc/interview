@@ -12,7 +12,7 @@ public class SplitStringTest extends TestSuper {
     public void test() {
         PrintUtil.template("Split space to '%20', the str is:\n\t" + stringBuffer.toString(), () -> {
             SplitString.split(stringBuffer);
-
+    
             PrintUtil.println(stringBuffer.toString() , "Result:\n\t", "");
         });
     }

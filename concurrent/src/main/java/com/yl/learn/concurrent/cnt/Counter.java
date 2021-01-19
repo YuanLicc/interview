@@ -1,5 +1,7 @@
 package com.yl.learn.concurrent.cnt;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.concurrent.CountDownLatch;
 
 public class Counter implements Runnable {
@@ -16,7 +18,7 @@ public class Counter implements Runnable {
     public void run() {
         try {
             while (countDownLatch.getCount() != 0) {
-                System.out.println(System.currentTimeMillis() + ":" + sum());
+                PrintUtil.println(System.currentTimeMillis() + ":" + sum());
                 Thread.sleep(100);
             }
         }
@@ -24,7 +26,7 @@ public class Counter implements Runnable {
             e.printStackTrace();
         }
         finally {
-            System.out.println(System.nanoTime() + ":" + sum());
+            PrintUtil.println(System.nanoTime() + ":" + sum());
         }
     }
     

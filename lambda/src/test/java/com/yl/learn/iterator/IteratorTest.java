@@ -1,5 +1,6 @@
 package com.yl.learn.iterator;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -16,24 +17,24 @@ public class IteratorTest extends TestCase {
         items.add(3);
         items.add(2);
 
-        System.out.println(items.stream().filter(t -> {
-                    System.out.println(t);
+        PrintUtil.println(items.stream().filter(t -> {
+                    PrintUtil.println(t);
                     return t == 2;
                 }).count());
 
         List<Integer> re = items.stream().collect(Collectors.toList());
         List<Integer> re1 = items.stream().map(item -> item - 1).collect(Collectors.toList());
         long co = Stream.of(re, re1).flatMap(item -> item.stream()).count();
-        System.out.println(co);
+        PrintUtil.println(co);
 
         Integer min = items.stream().max(Comparator.comparing(item -> item * -1)).get();
-        System.out.println(min);
+        PrintUtil.println(min);
 
         Integer accR = items.stream().reduce(4, (count, elements) -> count = count + 1);
-        System.out.println(accR);
+        PrintUtil.println(accR);
 
         Integer minVa = items.stream().reduce(Integer.MAX_VALUE, (minItem, item) -> minItem > item ? item : minItem);
-        System.out.println(minVa);
+        PrintUtil.println(minVa);
 
 
         items.stream().forEach(item -> {
@@ -41,23 +42,23 @@ public class IteratorTest extends TestCase {
         });
 
         int[] array = items.stream().mapToInt(item -> item - 1).toArray();
-        System.out.println(array);
+        PrintUtil.println(array);
 
         Map<String, Integer> map = items.stream().map(item -> item - 1).collect(Collectors.toMap(
                 (item) -> item.hashCode() + "key", (item) -> item
         ));
-        System.out.println(map);
+        PrintUtil.println(map);
 
         Integer minK = items.stream().collect(Collectors.minBy((min1, min2)-> min1 > min2 ? 1 : -1)).get();
-        System.out.println(minK);
+        PrintUtil.println(minK);
 
         Map<Boolean, List<Integer>> cc = items.stream().collect(Collectors.partitioningBy((item) -> item <= 1 ? true : false));
-        System.out.println(cc);
+        PrintUtil.println(cc);
 
         Map<Integer, List<Integer>> kk = items.stream().collect(Collectors.groupingBy(item -> item));
-        System.out.println(kk);
+        PrintUtil.println(kk);
 
         String gg = items.stream().map(item -> item + "").collect(Collectors.joining("-", "{","}"));
-        System.out.println(gg);
+        PrintUtil.println(gg);
     }
 }

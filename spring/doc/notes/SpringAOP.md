@@ -45,7 +45,7 @@ public class PrintBeforeAdvice implements MethodBeforeAdvice {
 
     @Override
     public void before(Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("[Before Invoke Method] " + method.toString());
+        PrintUtil.println("[Before Invoke Method] " + method.toString());
     }
 
 }
@@ -63,7 +63,7 @@ before 方法的实现在 Advice 中被配置到目标方法后，会在调用�
 public class PrintAfterAdvice implements AfterReturningAdvice {
     @Override
     public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("[After Invoke Method] " + method.toString());
+        PrintUtil.println("[After Invoke Method] " + method.toString());
     }
 }
 ```

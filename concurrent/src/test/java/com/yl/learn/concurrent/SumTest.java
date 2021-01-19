@@ -1,5 +1,6 @@
 package com.yl.learn.concurrent;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.concurrent.BrokenBarrierException;
@@ -55,7 +56,7 @@ public class SumTest extends TestCase {
             sum += aas[i].get();
         }
 
-        System.out.println(sum == (1 + 1000) * 500);
+        PrintUtil.println(sum == (1 + 1000) * 500);
     }
 
 }

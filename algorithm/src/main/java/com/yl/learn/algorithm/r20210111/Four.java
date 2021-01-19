@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class Four extends TestCase {
@@ -70,7 +71,7 @@ public class Four extends TestCase {
     }
     
     public void test() {
-        System.out.println(findMedianSortedArrays(new int[]{1,2}, new int[]{3,4}));
+        PrintUtil.println(findMedianSortedArrays(new int[]{1,2}, new int[]{3,4}));
     }
     
 }

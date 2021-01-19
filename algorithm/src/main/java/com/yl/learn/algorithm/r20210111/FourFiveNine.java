@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 /**
@@ -53,7 +54,7 @@ public class FourFiveNine extends TestCase {
     }
     
     public void test() {
-        System.out.println(repeatedSubstringPattern("abaababaab"));
+        PrintUtil.println(repeatedSubstringPattern("abaababaab"));
     }
     
 }

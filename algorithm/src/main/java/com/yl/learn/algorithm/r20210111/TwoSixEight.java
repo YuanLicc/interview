@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 /**
@@ -74,6 +75,6 @@ public class TwoSixEight extends TestCase {
     }
     
     public void test() {
-        System.out.println(missingNumber(new int[]{1, 3, 0, 2}));
+        PrintUtil.println(missingNumber(new int[]{1, 3, 0, 2}));
     }
 }

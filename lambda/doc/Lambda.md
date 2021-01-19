@@ -20,7 +20,7 @@ JButton button = new JButton("click me");
 button.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("clicked");
+        PrintUtil.println("clicked");
     }
 });
 ```
@@ -28,7 +28,7 @@ button.addActionListener(new ActionListener() {
 等同于：
 
 ```java
-button.addActionListener(event -> System.out.println("clicked"));
+button.addActionListener(event -> PrintUtil.println("clicked"));
 ```
 
 #### 不同的形式
@@ -44,7 +44,7 @@ public interface Printable {
 }
 
 public void testPrintable() {
-    Printable printable = () -> System.out.println("aaa");
+    Printable printable = () -> PrintUtil.println("aaa");
     printable.print();
 }
 ```
@@ -56,15 +56,15 @@ public interface Printable {
     void print(String arg);
 }
 
-Printable printable = arg -> System.out.println(arg);
+Printable printable = arg -> PrintUtil.println(arg);
 ```
 
 3）多个语句
 
 ```java
 Printable printable = arg -> {
-    System.out.println("one line");
-    System.out.println(arg);
+    PrintUtil.println("one line");
+    PrintUtil.println(arg);
 };
 ```
 
@@ -77,7 +77,7 @@ public interface PrintableMultiParams {
 
 PrintableMultiParams printableMultiParams = (arg, isPrint) -> {
     if(isPrint) {
-        System.out.println(arg);
+        PrintUtil.println(arg);
     }
 };
 ```
@@ -87,7 +87,7 @@ Lambda 表达式的参数类型可以由编译器推断出来，但是最好显�
 ```java
 PrintableMultiParams printableMultiParams = (String arg, boolean isPrint) -> {
     if(isPrint) {
-        System.out.println(arg);
+        PrintUtil.println(arg);
     }
 };
 ```
@@ -101,7 +101,7 @@ String name;
 
 PrintableMultiParams printableMultiParams = (arg, isPrint) -> {
     if(isPrint) {
-        System.out.println(arg + name);
+        PrintUtil.println(arg + name);
     }
 };
 ```
@@ -127,7 +127,7 @@ String name = "vvv";
 
 PrintableMultiParams printableMultiParams = (arg, isPrint) -> {
     if(isPrint) {
-        System.out.println(arg + name);
+        PrintUtil.println(arg + name);
     }
 };
 ```
@@ -141,7 +141,7 @@ name = "ccc";
 
 PrintableMultiParams printableMultiParams = (arg, isPrint) -> {
     if(isPrint) {
-        System.out.println(arg + name);
+        PrintUtil.println(arg + name);
     }
 };
 ```
@@ -205,6 +205,6 @@ public void testThreadLocal() {
         return new Date();
     });
 
-    System.out.println(local.get());
+    PrintUtil.println(local.get());
 }
 ```

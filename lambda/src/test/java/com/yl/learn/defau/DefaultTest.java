@@ -1,18 +1,20 @@
 package com.yl.learn.defau;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class DefaultTest extends TestCase {
     public void testDefault() {
-        Say say = () -> {System.out.println("loudly say");};
+        Say say = () -> {
+            PrintUtil.println("loudly say");};
         say.sayLoudly();
         say.say();
 
-        SayThanks sayThanks = () -> {System.out.println("kkk");};
+        SayThanks sayThanks = () -> {PrintUtil.println("kkk");};
         sayThanks.say();
         sayThanks.sayLoudly();
 
-        SayCry sayCry = () -> {System.out.println("aaa");};
+        SayCry sayCry = () -> {PrintUtil.println("aaa");};
         sayCry.say();
         sayCry.sayLoudly();
     }

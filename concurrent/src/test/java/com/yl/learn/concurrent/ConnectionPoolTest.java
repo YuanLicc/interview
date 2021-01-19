@@ -1,6 +1,7 @@
 package com.yl.learn.concurrent;
 
 import com.yl.learn.concurrent.connect.database.ConnectionPool;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class ConnectionPoolTest extends TestCase {
@@ -21,10 +22,10 @@ public class ConnectionPoolTest extends TestCase {
 
                 if(connection != null) {
                     pool.release(connection);
-                    System.out.println("Thread Name: " + Thread.currentThread().getName() + ", time: " + timer.end());
+                    PrintUtil.println("Thread Name: " + Thread.currentThread().getName() + ", time: " + timer.end());
                 }
                 else {
-                    System.out.println("Thread Name: " + Thread.currentThread().getName() + ", get null");
+                    PrintUtil.println("Thread Name: " + Thread.currentThread().getName() + ", get null");
                 }
             }
             catch (InterruptedException e) {

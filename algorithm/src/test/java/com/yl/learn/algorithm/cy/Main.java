@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.cy;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +20,7 @@ public class Main {
             sum += Integer.parseInt(num[i]);
         }
 
-        System.out.println(sum - (num.length - 1) * (num.length - 2) / 2);
+        PrintUtil.println(sum - (num.length - 1) * (num.length - 2) / 2);
     }
 
 }

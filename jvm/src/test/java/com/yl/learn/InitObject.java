@@ -1,5 +1,7 @@
 package com.yl.learn;
 
+import com.yl.learn.util.util.PrintUtil;
+
 public class InitObject {
     public static final int finalStaticField = 1;
     
@@ -11,7 +13,7 @@ public class InitObject {
     
     static {
         finalStaticUnField = 1;
-        System.out.println("INIT");
+        PrintUtil.println("INIT");
     }
     
     public static void staticMethod() {

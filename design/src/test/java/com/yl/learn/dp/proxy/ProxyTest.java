@@ -2,6 +2,7 @@ package com.yl.learn.dp.proxy;
 
 import com.yl.learn.dp.proxy.entity.PersonA;
 import com.yl.learn.dp.proxy.impl.PrintObjectChangeProxy;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.lang.reflect.Proxy;
@@ -18,7 +19,7 @@ public class ProxyTest extends TestCase {
         new PrintObjectChangeProxy(personA, new AfterInvokeHandler() {
             @Override
             public void afterInvokeHandle(Object proxied, Object methodReturnObject) {
-                System.out.println(proxied.toString());
+                PrintUtil.println(proxied.toString());
             }
         }));
         person.trimName();

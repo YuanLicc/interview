@@ -99,7 +99,7 @@ public class AtomicReferenceTest extends TestCase {
 
         userAtomicReference.compareAndSet(userOne, userTwo);
 
-        System.out.println(userAtomicReference.get().getName());
+        PrintUtil.println(userAtomicReference.get().getName());
 
     }
 }

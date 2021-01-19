@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm;
 
+import com.yl.learn.util.util.PrintUtil;
+
 /**
  * 最大公约数
  */
@@ -23,7 +25,7 @@ public class MaxCommonDivisor {
 
     public static void main(String[] args) {
 
-        System.out.println(greatest(4, 9));
+        PrintUtil.println(greatest(4, 9));
     }
 
 }

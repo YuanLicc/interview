@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 /**
@@ -32,7 +33,7 @@ public class OfferOneZero extends TestCase {
     }
     
     public void test() {
-        System.out.println(numWays(7));
+        PrintUtil.println(numWays(7));
     }
     
 }

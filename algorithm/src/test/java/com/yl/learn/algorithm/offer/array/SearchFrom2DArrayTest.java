@@ -23,7 +23,7 @@ public class SearchFrom2DArrayTest extends TestSuper {
             Arrays.asList(cell).stream().forEach((item) -> {
                 PrintUtil.println(Arrays.toString(item));
             });
-
+    
             PrintUtil.println(SearchFrom2DArray.search(cell, aim), "Result: ", "");
         });
     }

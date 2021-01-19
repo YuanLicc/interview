@@ -45,21 +45,21 @@ public class PrintUtil {
     }
 
     public static void println(Object o, String prefix, String suffix) {
-        System.out.println(StringUtil.nullToEmpty(prefix)
+        PrintUtil.println(StringUtil.nullToEmpty(prefix)
                 + ObjectUtil.nullToString(o) + StringUtil.nullToEmpty(suffix));
     }
 
     public static void printlnWithNaoTime(Object o, Timer timer) {
-        System.out.println(ObjectUtil.nullToString(o) + ", nao time: " + nullToTime(timer));
+        PrintUtil.println(ObjectUtil.nullToString(o) + ", nao time: " + nullToTime(timer));
     }
 
     public static void printlnWithNaoTime(Object o, String delimiter, Timer timer) {
-        System.out.println(ObjectUtil.nullToString(o)
+        PrintUtil.println(ObjectUtil.nullToString(o)
                 + StringUtil.nullToEmpty(delimiter) + nullToTime(timer));
     }
 
     public static void printlnWithNaoTime(Object o, Timer timer, String prefix, String delimiter, String suffix) {
-        System.out.println(StringUtil.nullToEmpty(prefix) + ObjectUtil.nullToString(o)
+        PrintUtil.println(StringUtil.nullToEmpty(prefix) + ObjectUtil.nullToString(o)
                 + StringUtil.nullToEmpty(delimiter) + nullToTime(timer) + StringUtil.nullToEmpty(suffix));
     }
 
@@ -126,33 +126,33 @@ public class PrintUtil {
 
     public static void template(String title, VoidNoParamsFunction contentAction) {
 
-        PrintUtil.printlnLine();
-        PrintUtil.println(StringUtil.nullToEmpty(title));
+        printLine();
+        println(StringUtil.nullToEmpty(title));
         contentAction.action();
     }
     
     public static <T> void printlnArray(T[] array) {
         if(array == null) return;
         for (int i = 0; i < array.length; i++) {
-            PrintUtil.print(array[i].toString(), "", i == array.length - 1 ? "" : ", ");
+            print(array[i].toString(), "", i == array.length - 1 ? "" : ", ");
         }
-        PrintUtil.println();
+        println();
     }
     
     public static void printlnArray(int[] array) {
         if(array == null) return;
         for (int i = 0; i < array.length; i++) {
-            PrintUtil.print(array[i], "", i == array.length - 1 ? "" : ", ");
+            print(array[i], "", i == array.length - 1 ? "" : ", ");
         }
-        PrintUtil.println();
+        println();
     }
 
     public static void printlnArray(boolean[] array) {
         if(array == null) return;
         for (int i = 0; i < array.length; i++) {
-            PrintUtil.print(array[i], "", i == array.length - 1 ? "" : ", ");
+            print(array[i], "", i == array.length - 1 ? "" : ", ");
         }
-        PrintUtil.println();
+        println();
     }
     
     public static <T> void printlnArray(T[][] array) {
@@ -160,7 +160,7 @@ public class PrintUtil {
         for (int i = 0; i < array.length; i++) {
             printlnArray(array[i]);
         }
-        PrintUtil.println();
+        println();
     }
     
     public static void printlnArray(int[][] array) {
@@ -168,7 +168,7 @@ public class PrintUtil {
         for (int i = 0; i < array.length; i++) {
             printlnArray(array[i]);
         }
-        PrintUtil.println();
+        println();
     }
 
     public static void printlnArray(boolean[][] array) {
@@ -176,6 +176,6 @@ public class PrintUtil {
         for (int i = 0; i < array.length; i++) {
             printlnArray(array[i]);
         }
-        PrintUtil.println();
+        println();
     }
 }

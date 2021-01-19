@@ -686,7 +686,7 @@ public void testNumbersAddTask() {
     Future<Integer> res = forkJoinPool.submit(task);
 
     try {
-        System.out.println(res.get());
+        PrintUtil.println(res.get());
     }
     catch (InterruptedException e) {
         e.printStackTrace();
@@ -705,7 +705,7 @@ public void testNumbersAddTask() {
 
 ```java
 if(task.isCompleteAbnormally()) {
-    System.out.println(task.getExeception())
+    PrintUtil.println(task.getExeception())
 }
 ```
 

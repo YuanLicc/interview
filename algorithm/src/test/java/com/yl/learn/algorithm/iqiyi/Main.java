@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.iqiyi;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class Main {
@@ -29,13 +31,13 @@ public class Main {
         }
 
         if(pre == post) {
-            System.out.println(0);
+            PrintUtil.println(0);
         }
         else if(pre > post) {
-            System.out.println(Math.min(num(cell, 3, 5, pre - post), numMinus(cell, 0, 2, pre - post)));
+            PrintUtil.println(Math.min(num(cell, 3, 5, pre - post), numMinus(cell, 0, 2, pre - post)));
         }
         else {
-            System.out.println(Math.min(num(cell, 0, 2, post - pre),numMinus(cell, 3, 5, post - pre)));
+            PrintUtil.println(Math.min(num(cell, 0, 2, post - pre),numMinus(cell, 3, 5, post - pre)));
         }
     }
 

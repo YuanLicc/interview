@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 /**
@@ -58,6 +59,6 @@ public class FourOneFive extends TestCase {
     }
     
     public void test() {
-        System.out.println(addStrings("999", "99"));
+        PrintUtil.println(addStrings("999", "99"));
     }
 }

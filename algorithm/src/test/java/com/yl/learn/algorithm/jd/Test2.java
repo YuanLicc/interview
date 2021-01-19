@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.jd;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class Test2 {
@@ -17,7 +19,7 @@ public class Test2 {
             cell[i][2] = in.nextLong();
         }
 
-        System.out.println(get(cell));
+        PrintUtil.println(get(cell));
     }
 
     public static int get(long[][] cell) {

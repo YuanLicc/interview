@@ -15,7 +15,7 @@ public static void main(String[] args) {
     Arrays.stream(threadMXBean.getAllThreadIds()).forEach(
         id -> {
             ThreadInfo threadInfo = threadMXBean.getThreadInfo(id);
-            System.out.println("Thread Id: " + id + ", Thread Name: " + threadInfo.getThreadName());
+            PrintUtil.println("Thread Id: " + id + ", Thread Name: " + threadInfo.getThreadName());
         }
     );
 }
@@ -188,7 +188,7 @@ public class DaemonThreadTest extends TestCase {
                 ThreadUtils.sleepSecond(100);
             }
             finally {
-                System.out.println("FinallyRunnable finally block");
+                PrintUtil.println("FinallyRunnable finally block");
             }
         }
     }
@@ -305,7 +305,7 @@ public class SafeShutdownThread extends TestCase {
                 && on) {
                 count++;
             }
-            System.out.println("count: " + count + " Thread id: " + Thread.currentThread().getId());
+            PrintUtil.println("count: " + count + " Thread id: " + Thread.currentThread().getId());
         }
 
         public void cancel() {
@@ -618,11 +618,11 @@ public class ConnectionPoolTest extends TestCase {
 
                 if(connection != null) {
                     pool.release(connection);
-                    System.out.println("Thread Name: " + Thread.currentThread().getName() 
+                    PrintUtil.println("Thread Name: " + Thread.currentThread().getName() 
                                        + ", time: " + timer.end());
                 }
                 else {
-                    System.out.println("Thread Name: " + Thread.currentThread().getName() 
+                    PrintUtil.println("Thread Name: " + Thread.currentThread().getName() 
                                        + ", get null");
                 }
             }

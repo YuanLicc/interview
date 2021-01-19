@@ -17,7 +17,7 @@
 ```java
 Stream.of(1,2,3,4).parallel().map((item) -> item + 1).forEach(
     item -> {
-        System.out.println(item);
+        PrintUtil.println(item);
     }
 );
 ```
@@ -37,7 +37,7 @@ Stream.of(1,2,3,4).parallel().map((item) -> item + 1).forEach(
 List<Integer> items = Arrays.asList(new Integer[]{1,2,3,4});
         items.parallelStream().forEach(
                 item -> {
-                    System.out.println(item);
+                    PrintUtil.println(item);
                 }
         );
 ```

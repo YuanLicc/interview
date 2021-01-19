@@ -1,6 +1,7 @@
 package com.yl.learn.concurrent;
 
 import com.yl.learn.concurrent.fork.NumbersAddTask;
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.concurrent.ExecutionException;
@@ -20,7 +21,7 @@ public class NumbersAddTaskTest extends TestCase {
         }
 
         try {
-            System.out.println(res.get());
+            PrintUtil.println(res.get());
         }
         catch (InterruptedException e) {
             e.printStackTrace();

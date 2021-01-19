@@ -1,5 +1,6 @@
 package com.zh.learn.interview.structure;
 
+import com.yl.learn.util.util.PrintUtil;
 import org.junit.Test;
 
 import java.util.Scanner;
@@ -11,11 +12,11 @@ public class StringTest {
 
     public void formatTest() {
         String str = String.format("你好,%9.2f",1234563.25);
-        System.out.println(str);
+        PrintUtil.println(str);
 
         Scanner input = new Scanner(System.in);
         String a = input.nextLine();
-        System.out.println(a);
+        PrintUtil.println(a);
     }
 
     public static void main(String[] args) {

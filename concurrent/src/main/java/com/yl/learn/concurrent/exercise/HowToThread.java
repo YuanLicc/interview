@@ -1,5 +1,7 @@
 package com.yl.learn.concurrent.exercise;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,14 +13,14 @@ public class HowToThread {
     static class ThreadOne implements Runnable {
         @Override
         public void run() {
-            System.out.println(1);
+            PrintUtil.println(1);
         }
     }
 
     // 方法2
     static class ThreadTwo extends Thread {
         public void run() {
-            System.out.println(2);
+            PrintUtil.println(2);
         }
     }
 
@@ -35,7 +37,7 @@ public class HowToThread {
         executorService.submit(new ThreadOne());
         executorService.submit(new ThreadTwo());
         Future<Integer> fur = executorService.submit(new CallableThread());
-        System.out.println(fur.get());
+        PrintUtil.println(fur.get());
         executorService.shutdown();
     }
 }

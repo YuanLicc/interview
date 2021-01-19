@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.iqiyi;
 
+import com.yl.learn.util.util.PrintUtil;
+
 import java.util.Scanner;
 
 public class MainMain {
@@ -25,7 +27,7 @@ public class MainMain {
         }
 
 
-        System.out.println(max(bases, chars, cell, p));
+        PrintUtil.println(max(bases, chars, cell, p));
     }
 
     private static int max(int[] bases, char[] chars, int[] cell, int p) {

@@ -1,5 +1,6 @@
 package com.yl.learn.algorithm.r20210111;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 /**
@@ -49,7 +50,7 @@ public class FiveFiveSeven extends TestCase {
     }
     
     public void test() {
-        System.out.println(reverseWords("Let's take LeetCode contest"));
+        PrintUtil.println(reverseWords("Let's take LeetCode contest"));
     }
 }
 

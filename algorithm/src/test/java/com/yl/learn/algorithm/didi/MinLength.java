@@ -1,5 +1,7 @@
 package com.yl.learn.algorithm.didi;
 
+import com.yl.learn.util.util.PrintUtil;
+
 public class MinLength {
 
     public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class MinLength {
 
         for(int i = 1; i < test.length; i++) {
 
-            System.out.println(min(test[0], test[i]));
+            PrintUtil.println(min(test[0], test[i]));
         }
     }
 

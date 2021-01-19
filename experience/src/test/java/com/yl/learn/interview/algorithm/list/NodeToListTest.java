@@ -10,6 +10,6 @@ public class NodeToListTest extends TestCase {
         NodeToList.ListNode listNode = new NodeToList.ListNode(0);
         listNode.next = new NodeToList.ListNode(1);
 
-        PrintUtil.print(NodeToList.listFromTailToHead(listNode));
+        PrintUtil.println(NodeToList.listFromTailToHead(listNode));
     }
 }

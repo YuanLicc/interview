@@ -1,5 +1,6 @@
 package com.yl.learn.parallel;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -15,14 +16,14 @@ public class ParallelTest extends TestCase {
     public void testParallel() {
         Stream.of(1,2,3,4).parallel().map((item) -> item + 1).forEach(
                 item -> {
-                    System.out.println(item);
+                    PrintUtil.println(item);
                 }
         );
 
         List<Integer> items = Arrays.asList(new Integer[]{1,2,3,4});
         items.parallelStream().forEach(
                 item -> {
-                    System.out.println(item);
+                    PrintUtil.println(item);
                 }
         );
     }
@@ -31,9 +32,9 @@ public class ParallelTest extends TestCase {
         int count = 10000;
         List<Double> items = randomInteger(count);
         long start = System.nanoTime();
-        System.out.println("serial time: " + timeSerial(items));
-        System.out.println("parallel time: " + timeParallel(items));
-        System.out.println(System.nanoTime() - start);
+        PrintUtil.println("serial time: " + timeSerial(items));
+        PrintUtil.println("parallel time: " + timeParallel(items));
+        PrintUtil.println(System.nanoTime() - start);
     }
 
     public long timeParallel(List<Double> items) {
@@ -79,7 +80,7 @@ public class ParallelTest extends TestCase {
                 ).collect(Collectors.groupingBy(item -> item))
                 .forEach(
                         (key, value) -> {
-                            System.out.println(key + "  :  " + value.size() / (double)count);
+                            PrintUtil.println(key + "  :  " + value.size() / (double)count);
                         }
                 );
     }

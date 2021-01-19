@@ -1,5 +1,6 @@
 package com.yl.learn.fina;
 
+import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
 public class PersonTest extends TestCase {
@@ -7,6 +8,6 @@ public class PersonTest extends TestCase {
         final Person person = new Person();
         person.setName("dd");
         Person person1 = new Person("ccc");
-        System.out.println(person.getName() + " " + person1.getName());
+        PrintUtil.println(person.getName() + " " + person1.getName());
     }
 }
