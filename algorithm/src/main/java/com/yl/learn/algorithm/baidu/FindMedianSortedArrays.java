@@ -2,48 +2,6 @@ package com.yl.learn.algorithm.baidu;
 
 public class FindMedianSortedArrays {
     
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        
-        // 确保小数组为 nums1
-        exchange(nums1, nums2);
-        int[] minArr = nums1;
-        
-        int[] maxArr = nums2;
-        
-        int minArrLen = minArr.length;
-        int maxArrLen = maxArr.length;
-        
-        int start = 0;
-        int end = minArrLen;
-        int middle = (minArrLen + maxArrLen + 1) / 2;
-        
-        while(start <= end) {
-            int minArrIndex = (start + end) / 2;
-            int maxArrIndex = middle - minArrIndex;
-            
-            if(minArrIndex < end && minArr[minArrIndex] < maxArr[maxArrIndex - 1]) {
-                start++;
-            }
-            else if(maxArrIndex > start && minArr[minArrIndex - 1] > maxArr[maxArrIndex]) {
-                end--;
-            }
-            else {
-            
-            }
-            
-        }
-        
-        return 1d;
-    }
-    
-    private void exchange(int[] nums1, int[] nums2) {
-        if(nums1.length > nums2.length) {
-            int[] tmp = nums1;
-            nums1 = nums2;
-            nums2 = tmp;
-        }
-    }
-    
     public static double findMedianSortedArray(int[] arrayA, int[] arrayB) {
         int m = arrayA.length;
         int n = arrayB.length;
@@ -98,8 +56,8 @@ public class FindMedianSortedArrays {
         
     }
     public static void main(String[] args) {
-        int[] arrayB = new int[]{3, 5, 6, 7, 8, 12, 20};
-        int[] arrayA = new int[]{1, 10, 17, 18};
+        int[] arrayB = new int[]{1,2};
+        int[] arrayA = new int[]{3,4};
         System.out.println(findMedianSortedArray(arrayA, arrayB));
     }
     
