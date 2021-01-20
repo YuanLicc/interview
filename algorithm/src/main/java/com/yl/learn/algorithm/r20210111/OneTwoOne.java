@@ -18,7 +18,18 @@ public class OneTwoOne extends TestCase {
         return minus < 0 ? 0 : minus;
     }
     
+    public int max(int[] prices) {
+        int buy = 0;
+        int sell = -prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            buy = Math.max(buy, sell + prices[i]);
+            sell = Math.max(sell, 0 - prices[i]);
+        }
+        return buy;
+    }
+    
     public void test() {
         PrintUtil.println(maxProfit(new int[]{13,1,1,2,1,4,1,1,12,342,121}));
+        PrintUtil.println(max(new int[]{13,1,1,2,1,4,1,1,12,342,121}));
     }
 }
