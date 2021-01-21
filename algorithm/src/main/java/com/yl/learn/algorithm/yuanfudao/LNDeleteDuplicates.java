@@ -48,6 +48,6 @@ public class LNDeleteDuplicates extends TestCase {
     }
 
     public void test() {
-        PrintUtil.println(deleteDuplicates(ListNode.Builder.build(new int[]{1, 2, 2})).toString1());
+        PrintUtil.println(deleteDuplicates(ListNode.Builder.build(new int[]{1, 2, 2})).toString());
     }
 }

@@ -78,7 +78,7 @@ public class SortListNode extends TestCase {
     public void test() {
         ListNode node = ListNode.Builder.build(new int[]{3, 4, 1});
         ListNode node1 = sortList(node);
-        PrintUtil.println(node1.toString1());
+        PrintUtil.println(node1.toString());
     }
 
 }

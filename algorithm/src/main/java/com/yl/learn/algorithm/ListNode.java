@@ -8,7 +8,7 @@ public class ListNode {
      public ListNode(int x) { val = x; }
      
      
-     public String toString1() {
+     public String toString() {
           ListNode tmp = this;
           StringBuilder sb = new StringBuilder().append(val);
           tmp = tmp.next;

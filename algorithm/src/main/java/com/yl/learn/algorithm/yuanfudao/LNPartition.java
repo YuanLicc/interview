@@ -60,10 +60,10 @@ public class LNPartition extends TestCase {
     }
 
     public void test() {
-        PrintUtil.println(partition(ListNode.Builder.build(new int[]{1, 2, 3, 3, 4}), 3).toString1());
-        PrintUtil.println(partition(ListNode.Builder.build(new int[]{1, 2, 3, 3, 4, 1}), 3).toString1());
-        PrintUtil.println(partition(ListNode.Builder.build(new int[]{1}), 3).toString1());
-        PrintUtil.println(partition(ListNode.Builder.build(new int[]{3, 2, 1, 0}), 2).toString1());
+        PrintUtil.println(partition(ListNode.Builder.build(new int[]{1, 2, 3, 3, 4}), 3).toString());
+        PrintUtil.println(partition(ListNode.Builder.build(new int[]{1, 2, 3, 3, 4, 1}), 3).toString());
+        PrintUtil.println(partition(ListNode.Builder.build(new int[]{1}), 3).toString());
+        PrintUtil.println(partition(ListNode.Builder.build(new int[]{3, 2, 1, 0}), 2).toString());
     }
 
 }

@@ -52,10 +52,10 @@ public class ReverseListBetween extends TestCase {
     
     public void test() {
         int[] a = new int[]{3,5};
-        PrintUtil.println(reverseBetween(ListNode.Builder.build(a), 1, 2).toString1());
+        PrintUtil.println(reverseBetween(ListNode.Builder.build(a), 1, 2).toString());
     
         int[] b = new int[]{1,2,3,4,5,6};
-        PrintUtil.println(reverseBetween(ListNode.Builder.build(b), 1, 6).toString1());
-        PrintUtil.println(reverseBetween(ListNode.Builder.build(b), 1, 3).toString1());
+        PrintUtil.println(reverseBetween(ListNode.Builder.build(b), 1, 6).toString());
+        PrintUtil.println(reverseBetween(ListNode.Builder.build(b), 1, 3).toString());
     }
 }

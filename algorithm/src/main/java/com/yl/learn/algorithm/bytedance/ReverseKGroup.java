@@ -76,7 +76,7 @@ public class ReverseKGroup extends TestCase {
     }
 
     public void test() {
-        PrintUtil.println(reverseKGroup(ListNode.Builder.build(new int[]{1, 2, 3, 4, 5}), 3).toString1());
+        PrintUtil.println(reverseKGroup(ListNode.Builder.build(new int[]{1, 2, 3, 4, 5}), 3).toString());
     }
 
 }
