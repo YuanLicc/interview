@@ -6,7 +6,19 @@ import junit.framework.TestCase;
 public class FiveFive extends TestCase {
     // 1,2,3,4
     public boolean canJump(int[] nums) {
-        return canJump(nums, 0);
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if(nums[i] == 0) {
+                boolean is = false;
+                for (int j = i - 1; j >= 0; j--) {
+                    if(nums[j] > i - j) {
+                        is = true;
+                        break;
+                    }
+                }
+                if(!is) return false;
+            }
+        }
+        return true;
     }
     
     private boolean canJump(int[] nums, int index) {
