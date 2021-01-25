@@ -44,6 +44,7 @@
         <cobertura.version>2.7</cobertura.version>
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <servlet.version>4.0.1</servlet.version>
+        <scala.version>2.12</scala.version>
     </properties>
 
     <!--仓库配置-->

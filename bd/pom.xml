@@ -9,10 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <spark.version>3.0.1</spark.version>
+    </properties>
+
     <artifactId>bd</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>mr-word-count</module>
+        <module>spark-word-count</module>
     </modules>
 
 </project>
