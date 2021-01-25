@@ -1,45 +1,45 @@
 package com.yl.learn.algorithm.r20210111;
 
 import com.yl.learn.algorithm.ListNode;
+import com.yl.learn.util.util.PrintUtil;
+import junit.framework.TestCase;
 
-import java.util.Stack;
-
-public class OneFourEight {
+public class OneFourEight extends TestCase {
     
     public ListNode sortList(ListNode head) {
-        if(head == null) return head;
+        if(head == null || head.next == null) return head;
+        ListNode slow = head;
+        ListNode quick = head.next;
         
-        Stack<ListNode> maxStack = new Stack<>();
-        Stack<ListNode> help = new Stack<>();
-        
-        ListNode p = head;
-        
-        while (p != null) {
-            while (!maxStack.isEmpty() && maxStack.peek().val < p.val) {
-                help.push(maxStack.pop());
-            }
-            maxStack.push(p);
-            while (!help.isEmpty()) {
-                maxStack.push(help.pop());
-            }
-            p = p.next;
+        while (quick != null && quick.next != null) {
+            slow = slow.next;
+            quick = quick.next.next;
         }
-        ListNode rs = null;
-        ListNode pre = null;
+        ListNode rightHead = slow.next;
+        slow.next = null;
         
-        while (!maxStack.isEmpty()) {
-            if(rs == null) {
-                rs = maxStack.pop();
-                pre = rs;
-            }
-            else {
-                pre.next = maxStack.pop();
-                pre = pre.next;
-            }
-        }
-        pre.next = null;
-        
-        return rs;
+        ListNode left = sortList(head);
+        ListNode right = sortList(rightHead);
+        return merge(left, right);
     }
     
+    private ListNode merge(ListNode left, ListNode right) {
+        if(left == null && right == null) return null;
+        if(left == null || right == null) {
+            return left == null ? right : left;
+        }
+        
+        if(left.val <= right.val) {
+            left.next = merge(left.next, right);
+            return left;
+        }
+        else {
+            right.next = merge(left, right.next);
+            return right;
+        }
+    }
+    
+    public void test() {
+        PrintUtil.println(sortList(ListNode.Builder.build(new int[]{-10,1,2,34,5,6})));
+    }
 }
