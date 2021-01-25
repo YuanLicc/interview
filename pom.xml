@@ -20,7 +20,7 @@
         <module>nio</module>
         <module>redis</module>
         <module>hadoop</module>
-        <module>dw</module>
+        <module>bd</module>
         <module>util</module>
         <module>source</module>
         <module>scala</module>

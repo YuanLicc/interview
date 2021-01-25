@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dw</artifactId>
+    <artifactId>bd</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>mr-word-count</module>
