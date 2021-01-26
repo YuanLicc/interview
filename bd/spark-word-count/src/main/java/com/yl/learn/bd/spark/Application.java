@@ -15,7 +15,13 @@ public class Application {
         
         JavaRDD<String> rdd = jsc.textFile(args[0]);
         rdd.flatMap(line -> Arrays.asList(line.split(" ")).iterator())
-            .mapToPair(word -> new Tuple2<>(word, 1)).reduceByKey((x, y) -> x + y).mapToPair(kv -> new Tuple2<>(kv._2, kv._1)).sortByKey().mapToPair(kv -> new Tuple2<>(kv._2, kv._1)).collect().forEach(System.out::println);
+                .mapToPair(word -> new Tuple2<>(word, 1))
+                .reduceByKey((x, y) -> x + y)
+                .mapToPair(kv -> new Tuple2<>(kv._2, kv._1))
+                .sortByKey()
+                .mapToPair(kv -> new Tuple2<>(kv._2, kv._1))
+                .collect()
+                .forEach(System.out::println);
     }
     
 }
