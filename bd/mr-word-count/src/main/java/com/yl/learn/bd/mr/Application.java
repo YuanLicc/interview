@@ -1,4 +1,4 @@
-package com.yl.learn.dw.mr;
+package com.yl.learn.bd.mr;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

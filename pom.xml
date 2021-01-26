@@ -45,6 +45,7 @@
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <servlet.version>4.0.1</servlet.version>
         <scala.version>2.12</scala.version>
+        <assembly.plugin.version>3.2.0</assembly.plugin.version>
     </properties>
 
     <!--仓库配置-->

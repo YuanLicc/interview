@@ -1,4 +1,4 @@
-package com.yl.learn.dw.mr;
+package com.yl.learn.bd.mr;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

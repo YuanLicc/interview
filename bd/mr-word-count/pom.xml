@@ -41,7 +41,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>com.yl.learn.dw.mr.Application</mainClass>
+                            <mainClass>com.yl.learn.bd.mr.Application</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
