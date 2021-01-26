@@ -9,29 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mr-word-count</artifactId>
-
-    <properties>
-        <hadoop-version>3.2.1</hadoop-version>
-    </properties>
-
-
+    <artifactId>spark-sql</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${hadoop-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>${hadoop-version}</version>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>mr-word-count</finalName>
+        <finalName>spark-sql</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -41,7 +30,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>com.yl.learn.dw.mr.Application</mainClass>
+                            <mainClass>com.yl.learn.spark.sql.HiveApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -60,4 +49,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

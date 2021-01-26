@@ -18,6 +18,7 @@
     <modules>
         <module>mr-word-count</module>
         <module>spark-word-count</module>
+        <module>spark-sql</module>
     </modules>
 
 </project>
