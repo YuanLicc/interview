@@ -48,3 +48,8 @@ final 作为不可变常量在编译器会被替换为 String c = "a" + "b" => S
 String a = "a", b = "b", c = a + b;
 ```
 非 final 变量则不会被替换，而是以 StringBuilder.append 的方式进行 + 的替换，所以 c != "ab"
+```java
+String a = "a", b = "b", ab = a + b;
+ab.intern();
+```
+ab == "ab"，ab 变量在堆内创建后，调用 intern 方法将 ab 的引用存放在常量池内，所以 "ab" 的引用就是 ab 的引用(jdk1.7；1.7 以前 intern 方法是将 "ab" 本身 copy 到常量池)
