@@ -14,7 +14,7 @@ import java.util.LinkedList;
  */
 public class MaxSlidingWin {
     
-    public int[] maxSlidingWindow(int[] nums, int k) {
+    public int[] maxWindow(int[] nums, int k) {
         if(nums == null || k <= 0) return nums;
         
         // 4 2 3 4
