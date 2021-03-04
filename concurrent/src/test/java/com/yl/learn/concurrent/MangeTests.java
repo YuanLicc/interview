@@ -14,4 +14,22 @@ public class MangeTests extends TestCase {
         messageDigest.update(messageDigest.digest());
         PrintUtil.println(new String(messageDigest.digest()));
     }
+    
+    class ThreadOne extends Thread {
+        public void run() {
+            System.out.println("Run");
+        }
+    }
+    
+    class ThreadTwo implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("Run Run");
+        }
+    }
+    
+    public void testRun() {
+        new ThreadOne().start();
+        new Thread(new ThreadTwo()).start();
+    }
 }

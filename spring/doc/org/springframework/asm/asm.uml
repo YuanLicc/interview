@@ -3,63 +3,67 @@
   <ID>JAVA</ID>
   <OriginalElement>org.springframework.asm</OriginalElement>
   <nodes>
-    <node x="0.0" y="334.0">org.springframework.asm.SpringAsmInfo</node>
-    <node x="4.0" y="253.0">org.springframework.asm.ClassWriter</node>
-    <node x="206.0" y="253.0">org.springframework.asm.FieldWriter</node>
-    <node x="0.0" y="577.0">org.springframework.asm.Label</node>
-    <node x="0.0" y="167.0">org.springframework.asm.ClassVisitor</node>
-    <node x="146.0" y="577.0">org.springframework.asm.Item</node>
-    <node x="432.0" y="167.0">org.springframework.asm.Frame</node>
-    <node x="246.0" y="86.0">org.springframework.asm.ModuleWriter</node>
-    <node x="202.0" y="167.0">org.springframework.asm.FieldVisitor</node>
-    <node x="0.0" y="496.0">org.springframework.asm.Opcodes</node>
-    <node x="4.0" y="86.0">org.springframework.asm.AnnotationWriter</node>
-    <node x="0.0" y="0.0">org.springframework.asm.AnnotationVisitor</node>
-    <node x="486.0" y="496.0">org.springframework.asm.Handle</node>
-    <node x="162.0" y="496.0">org.springframework.asm.Context</node>
-    <node x="364.0" y="415.0">org.springframework.asm.TypePath</node>
-    <node x="210.0" y="334.0">org.springframework.asm.TypeReference</node>
-    <node x="186.0" y="415.0">org.springframework.asm.Attribute</node>
-    <node x="284.0" y="577.0">org.springframework.asm.Edge</node>
-    <node x="420.0" y="334.0">org.springframework.asm.ClassReader</node>
-    <node x="242.0" y="0.0">org.springframework.asm.ModuleVisitor</node>
-    <node x="324.0" y="496.0">org.springframework.asm.Handler</node>
-    <node x="456.0" y="86.0">org.springframework.asm.MethodWriter</node>
-    <node x="404.0" y="253.0">org.springframework.asm.CurrentFrame</node>
-    <node x="452.0" y="0.0">org.springframework.asm.MethodVisitor</node>
-    <node x="0.0" y="415.0">org.springframework.asm.ByteVector</node>
-    <node x="422.0" y="577.0">org.springframework.asm.Type</node>
+    <node x="732.0" y="2328.0">org.springframework.asm.SpringAsmInfo</node>
+    <node x="780.0" y="476.0">org.springframework.asm.ClassWriter</node>
+    <node x="983.0" y="1995.0">org.springframework.asm.FieldWriter</node>
+    <node x="497.0" y="2328.0">org.springframework.asm.Label</node>
+    <node x="780.0" y="0.0">org.springframework.asm.ClassVisitor</node>
+    <node x="24.5" y="2328.0">org.springframework.asm.Frame</node>
+    <node x="1821.0" y="294.0">org.springframework.asm.ModuleWriter</node>
+    <node x="983.0" y="1805.0">org.springframework.asm.FieldVisitor</node>
+    <node x="936.0" y="2328.0">org.springframework.asm.Opcodes</node>
+    <node x="547.0" y="2021.0">org.springframework.asm.AnnotationWriter</node>
+    <node x="547.0" y="1805.0">org.springframework.asm.AnnotationVisitor</node>
+    <node x="1563.0" y="1805.0">org.springframework.asm.Handle</node>
+    <node x="2240.0" y="1805.0">org.springframework.asm.TypePath</node>
+    <node x="1264.0" y="2328.0">org.springframework.asm.Context</node>
+    <node x="0.0" y="1805.0">org.springframework.asm.TypeReference</node>
+    <node x="198.0" y="2328.0">org.springframework.asm.Attribute</node>
+    <node x="1423.0" y="2328.0">org.springframework.asm.Edge</node>
+    <node x="2183.0" y="0.0">org.springframework.asm.ClassReader</node>
+    <node x="1104.0" y="2328.0">org.springframework.asm.Handler</node>
+    <node x="1821.0" y="0.0">org.springframework.asm.ModuleVisitor</node>
+    <node x="0.0" y="918.0">org.springframework.asm.MethodWriter</node>
+    <node x="0.0" y="2414.0">org.springframework.asm.CurrentFrame</node>
+    <node x="0.0" y="0.0">org.springframework.asm.MethodVisitor</node>
+    <node x="1848.0" y="1805.0">org.springframework.asm.ByteVector</node>
+    <node x="1369.0" y="0.0">org.springframework.asm.Type</node>
   </nodes>
   <notes />
   <edges>
     <edge source="org.springframework.asm.ClassWriter" target="org.springframework.asm.ClassVisitor">
-      <point x="0.0" y="-18.0" />
-      <point x="0.0" y="18.0" />
+      <point x="0.0" y="-395.0" />
+      <point x="0.0" y="213.0" />
     </edge>
     <edge source="org.springframework.asm.CurrentFrame" target="org.springframework.asm.Frame">
       <point x="0.0" y="-18.0" />
       <point x="0.0" y="18.0" />
     </edge>
     <edge source="org.springframework.asm.MethodWriter" target="org.springframework.asm.MethodVisitor">
-      <point x="0.0" y="-18.0" />
-      <point x="0.0" y="18.0" />
+      <point x="0.0" y="-421.0" />
+      <point x="0.0" y="434.0" />
     </edge>
     <edge source="org.springframework.asm.AnnotationWriter" target="org.springframework.asm.AnnotationVisitor">
-      <point x="0.0" y="-18.0" />
-      <point x="0.0" y="18.0" />
+      <point x="0.0" y="-83.0" />
+      <point x="0.0" y="83.0" />
     </edge>
     <edge source="org.springframework.asm.ModuleWriter" target="org.springframework.asm.ModuleVisitor">
-      <point x="0.0" y="-18.0" />
-      <point x="0.0" y="18.0" />
+      <point x="0.0" y="-122.0" />
+      <point x="0.0" y="122.0" />
     </edge>
     <edge source="org.springframework.asm.FieldWriter" target="org.springframework.asm.FieldVisitor">
-      <point x="0.0" y="-18.0" />
-      <point x="0.0" y="18.0" />
+      <point x="0.0" y="-70.0" />
+      <point x="0.0" y="70.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="308.5" y="306.5" />
-  <SelectedNodes />
-  <Categories />
+  <settings layout="Hierarchic Group" zoom="1.0" x="309.0" y="307.0" />
+  <SelectedNodes>
+    <node>org.springframework.asm.ClassReader</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>public</VISIBILITY>
 </Diagram>
