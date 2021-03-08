@@ -5,10 +5,22 @@ import jdk.internal.org.objectweb.asm.*;
 import junit.framework.TestCase;
 
 import java.io.IOException;
+import java.security.AccessControlContext;
 
 public class ASMTest extends TestCase {
     
-    public void test() throws IOException {
+    
+    public void testSec() {
+        SecurityManager manager = System.getSecurityManager();
+        
+        if(manager == null) {
+            manager = new SecurityManager();
+        }
+        AccessControlContext context = (AccessControlContext) manager.getSecurityContext();
+        PrintUtil.print(context);
+    }
+    
+    /*public void test() throws IOException {
     
         ClassReader classReader = new ClassReader(ASMTest.class.getResourceAsStream("App.class"));
         classReader.accept(new Visitor(Opcodes.ASM5), ClassReader.SKIP_DEBUG);
@@ -49,7 +61,7 @@ public class ASMTest extends TestCase {
         public MethodVisitor visitMethod(int var1, String var2, String var3, String var4, String[] var5) {
             return this.cv != null ? this.cv.visitMethod(var1, var2, var3, var4, var5) : null;
         }
-    }
+    }*/
     
     
 }
