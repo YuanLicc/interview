@@ -4,6 +4,11 @@ import com.yl.learn.concurrent.connect.database.ConnectionPool;
 import com.yl.learn.util.util.PrintUtil;
 import junit.framework.TestCase;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
+
 public class ConnectionPoolTest extends TestCase {
 
     static class SleepRunnable implements Runnable {
@@ -43,6 +48,22 @@ public class ConnectionPoolTest extends TestCase {
             thread.start();
         }
         pool.get(-1);
+    }
+    
+    public void testExecutors() throws ExecutionException, InterruptedException {
+        ExecutorService service = Executors.newCachedThreadPool();
+        
+        FutureTask<String> task = (FutureTask<String>) service.submit(new Run(), "success");
+        
+        PrintUtil.print(task.get());
+    }
+    
+    class Run implements Runnable {
+    
+        @Override
+        public void run() {
+            PrintUtil.print("RUN");
+        }
     }
 
 }
