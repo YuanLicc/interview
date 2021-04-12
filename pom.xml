@@ -49,6 +49,7 @@
         <assembly.plugin.version>3.2.0</assembly.plugin.version>
         <log4j.version>1.7.5</log4j.version>
         <antlr.version>4.7</antlr.version>
+        <jedis.version>3.5.2</jedis.version>
     </properties>
 
     <!--仓库配置-->
