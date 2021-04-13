@@ -6,7 +6,6 @@ import junit.framework.TestCase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class ExecutorTests extends TestCase {
     
@@ -72,6 +71,11 @@ public class ExecutorTests extends TestCase {
         PrintUtil.println(toS(STOP));
         PrintUtil.println(toS(TIDYING));
         PrintUtil.println(toS(TERMINATED));
+    
+        int CAPACITY   = (1 << COUNT_BITS) - 1;
+        PrintUtil.println(toS(CAPACITY));
+        PrintUtil.println(toS(~CAPACITY));
+        PrintUtil.println(toS(RUNNING | 10));
     }
     
     private String toS(int num) {

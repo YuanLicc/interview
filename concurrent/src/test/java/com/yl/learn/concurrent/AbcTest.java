@@ -7,8 +7,8 @@ public class AbcTest extends TestCase {
 
     public void test() {
         AbcCas abcCas = new AbcCas();
-        new Thread(() -> {abcCas.first();}).start();
-        new Thread(() -> {abcCas.second();}).start();
-        new Thread(() -> {abcCas.third();}).start();
+        new Thread(() -> {abcCas.println(1);}).start();
+        new Thread(() -> {abcCas.println(2);}).start();
+        new Thread(() -> {abcCas.println(3);}).start();
     }
 }

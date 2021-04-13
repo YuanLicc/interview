@@ -21,25 +21,19 @@ public class AbcCas {
     }
 
     private volatile int state = 0;
-
-    public void first() {
-        while(!unsafe.compareAndSwapInt(this, stateOffset, 0, 1)) {
-            //sleep
+    
+    private int printNum;
+    
+    public void println(int num) {
+        while (true) {
+            if (unsafe.compareAndSwapInt(this, stateOffset, 0, 1) &&
+                printNum == num - 1) {
+                PrintUtil.println(num);
+                printNum = num;
+                unsafe.compareAndSwapInt(this, stateOffset, 1, 0);
+                return;
+            }
+            unsafe.compareAndSwapInt(this, stateOffset, 1, 0);
         }
-        PrintUtil.println(1);
-    }
-
-    public void second() {
-        while(!unsafe.compareAndSwapInt(this, stateOffset, 1, 2)) {
-            //sleep
-        }
-        PrintUtil.println(2);
-    }
-
-    public void third() {
-        while(!unsafe.compareAndSwapInt(this, stateOffset, 2, 0)) {
-            //sleep
-        }
-        PrintUtil.println(3);
     }
 }
