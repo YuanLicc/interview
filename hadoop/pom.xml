@@ -11,5 +11,18 @@
 
     <artifactId>hadoop</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>2.3.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yl.learn</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
