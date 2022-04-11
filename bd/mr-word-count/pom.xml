@@ -12,7 +12,7 @@
     <artifactId>mr-word-count</artifactId>
 
     <properties>
-        <hadoop-version>3.2.1</hadoop-version>
+        <hadoop-version>3.2.2</hadoop-version>
     </properties>
 
 
